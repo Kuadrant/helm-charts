@@ -3,6 +3,9 @@
 SHELL = /usr/bin/env bash -o pipefail
 .SHELLFLAGS = -ec
 
+MKFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
+PROJECT_PATH := $(patsubst %/,%,$(dir $(MKFILE_PATH)))
+
 ##@ General
 
 # The help target prints out all targets with their descriptions organized
@@ -40,4 +43,4 @@ helm: $(HELM) ## Download helm locally if necessary.
 
 .PHONY: helm-index
 helm-index: $(HELM) ## Update the helm repository index
-	$(HELM) repo repo index charts
+	$(HELM) repo index charts
