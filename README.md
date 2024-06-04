@@ -12,8 +12,8 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
 ## Installing a Chart
 
-Installing Limitador Operator
+Installing a Kuadrant Chart, i.e: `limitador-operator`
 ```shell
 kubectl create namespace kuadrant-system
-helm install limitador-operator --namespace kuadrant-system
+helm install limitador-operator kuadrant/limitador-operator --namespace kuadrant-system
 ```
