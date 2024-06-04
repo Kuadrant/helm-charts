@@ -30,3 +30,4 @@ jobs:
           skip_packaging: true
         env:
           CR_TOKEN: "${{ secrets.HELM_WORKFLOWS_TOKEN }}"
+          CR_PACKAGE_PATH: "./charts"
