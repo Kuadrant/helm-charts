@@ -16,9 +16,13 @@ jobs:
           go-version: 1.21.x
         id: go
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get chart package
+        working-directory: ${{ github.workspace }}
         run: |
-          # TODO: make sync package target
+          make get-chart \
+            BROWSER_DOWNLOAD_URL="${{ github.event.client_payload.browser_download_url }}" \
+            CHART_NAME="${{ github.event.client_payload.chart }}" \
+            CHART_VERSION="${{ github.event.client_payload.version }}"
