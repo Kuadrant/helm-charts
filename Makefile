@@ -44,3 +44,13 @@ helm: $(HELM) ## Download helm locally if necessary.
 .PHONY: helm-index
 helm-index: $(HELM) ## Update the helm repository index
 	$(HELM) repo index charts
+
+##@ Sync chart packages
+
+BROWSER_DOWNLOAD_URL ?= <BROWSER-DOWNLOAD-URL>
+CHART_NAME ?= <CHART-NAME>
+CHART_VERSION ?= <CHART-VERSION>
+
+.PHONY: get-chart
+get-chart: ## Get the chart package from its repository
+	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz $(BROWSER_DOWNLOAD_URL)
