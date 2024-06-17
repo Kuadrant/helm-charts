@@ -29,3 +29,10 @@ jobs:
       - name: Update local index
         run: |
           make helm-index
+      - name: Commit the changes
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add charts
+          git commit -m "Sync chart ${{ github.event.client_payload.chart }} version ${{ github.event.client_payload.version }}"
+          git push
