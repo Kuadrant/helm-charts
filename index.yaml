@@ -1,3 +1,20 @@
 apiVersion: v1
-entries: {}
-generated: "2024-06-12T15:27:49.672695+02:00"
+entries:
+  limitador-operator:
+  - apiVersion: v2
+    created: "2024-06-18T14:37:18.875692014Z"
+    description: A Helm chart for Limitador Operator
+    digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
+    maintainers:
+    - email: asnaps@redhat.com
+      name: Alex Snaps
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: limitador-operator
+    type: application
+    urls:
+    - limitador-operator-0.10.0-alpha1.tgz
+    version: 0.10.0-alpha1
+generated: "2024-06-18T14:37:18.875698486Z"
