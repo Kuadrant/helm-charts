@@ -28,7 +28,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.5.0
         with:
           skip_packaging: true
-          packages_with_index: true
         env:
           CR_TOKEN: "${{ secrets.HELM_WORKFLOWS_TOKEN }}"
           CR_PACKAGE_PATH: "./charts"
