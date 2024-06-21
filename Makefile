@@ -54,3 +54,7 @@ CHART_VERSION ?= <CHART-VERSION>
 .PHONY: get-chart
 get-chart: ## Get the chart package from its repository
 	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz $(BROWSER_DOWNLOAD_URL)
+
+.PHONY: delete-chart
+delete-chart: ## Delete the chart package from its repository
+	rm -f ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz
