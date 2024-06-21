@@ -2,7 +2,36 @@ apiVersion: v1
 entries:
   limitador-operator:
   - apiVersion: v2
-    created: "2024-06-18T14:35:01.721532285Z"
+    created: "2024-06-21T12:56:29.855960776Z"
+    description: Kubernetes operator for managing Limitador instances, a rate limiting
+      service to protect your APIs.
+    digest: 7167aade6f7c22f11fcd3d07ca65e187056dec253854ccb9af07e1900516b8d7
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - limitador
+    - rate limiting
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: asnaps@redhat.com
+      name: Alex Snaps
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: limitador-operator
+    sources:
+    - https://github.com/Kuadrant/limitador-operator/
+    - https://github.com/Kuadrant/limitador/
+    type: application
+    urls:
+    - limitador-operator-0.10.0-alpha2.tgz
+    version: 0.10.0-alpha2
+  - apiVersion: v2
+    created: "2024-06-21T12:56:29.855584172Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -17,4 +46,4 @@ entries:
     urls:
     - limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-06-18T14:35:01.72086873Z"
+generated: "2024-06-21T12:56:29.855051917Z"
