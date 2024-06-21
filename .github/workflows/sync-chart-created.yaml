@@ -1,7 +1,7 @@
 on:
   repository_dispatch:
     types:
-      - sync-chart
+      - chart-created
 
 jobs:
   build-index:
@@ -34,5 +34,5 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add charts
-          git commit -m "Sync chart ${{ github.event.client_payload.chart }} version ${{ github.event.client_payload.version }}"
+          git commit -m "Sync created chart ${{ github.event.client_payload.chart }} version ${{ github.event.client_payload.version }}"
           git push
