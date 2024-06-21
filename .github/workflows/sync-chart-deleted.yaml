@@ -1,0 +1,37 @@
+on:
+  repository_dispatch:
+    types:
+      - chart-deleted
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Set up Go 1.21.x
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21.x
+        id: go
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Delete chart package
+        working-directory: ${{ github.workspace }}
+        run: |
+          make delete-chart \
+            CHART_NAME="${{ github.event.client_payload.chart }}" \
+            CHART_VERSION="${{ github.event.client_payload.version }}"
+      - name: Update local index
+        run: |
+          make helm-index
+      - name: Commit the changes
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add charts
+          git commit -m "Sync deleted chart ${{ github.event.client_payload.chart }} version ${{ github.event.client_payload.version }}"
+          git push
