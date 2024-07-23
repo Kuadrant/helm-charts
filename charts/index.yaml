@@ -1,8 +1,41 @@
 apiVersion: v1
 entries:
+  authorino-operator:
+  - apiVersion: v2
+    created: "2024-07-23T16:36:06.248669334Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - authorino-operator-0.12.0-alpha1.tgz
+    version: 0.12.0-alpha1
   limitador-operator:
   - apiVersion: v2
-    created: "2024-07-23T08:55:50.051750142Z"
+    created: "2024-07-23T16:36:06.249785121Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
@@ -31,7 +64,7 @@ entries:
     - limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-07-23T08:55:50.051260197Z"
+    created: "2024-07-23T16:36:06.249370138Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
@@ -60,7 +93,7 @@ entries:
     - limitador-operator-0.10.0-alpha2.tgz
     version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-07-23T08:55:50.050248661Z"
+    created: "2024-07-23T16:36:06.2490004Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -75,4 +108,4 @@ entries:
     urls:
     - limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-07-23T08:55:50.049790295Z"
+generated: "2024-07-23T16:36:06.247569117Z"
