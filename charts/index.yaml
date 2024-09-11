@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   authorino-operator:
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.568913906Z"
+    created: "2024-09-11T08:13:41.985871761Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -35,7 +35,7 @@ entries:
     version: 0.12.0-alpha1
   dns-operator:
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.569590701Z"
+    created: "2024-09-11T08:13:41.986565159Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: 6ecf00957054c592ed615f9c27b18c673a9424b8a02559fa20bf7f0330ad2d17
@@ -64,7 +64,7 @@ entries:
     - dns-operator-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.569242741Z"
+    created: "2024-09-11T08:13:41.986237756Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -94,7 +94,7 @@ entries:
     version: 0.4.0-alpha1
   kuadrant-operator:
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.575834454Z"
+    created: "2024-09-11T08:13:41.992180088Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -146,7 +146,7 @@ entries:
     version: 0.9.0-alpha1
   limitador-operator:
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.576885169Z"
+    created: "2024-09-11T08:13:41.993203393Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
@@ -175,7 +175,7 @@ entries:
     - limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.576530456Z"
+    created: "2024-09-11T08:13:41.992855342Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
@@ -204,7 +204,7 @@ entries:
     - limitador-operator-0.10.0-alpha2.tgz
     version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-08-26T13:10:43.576176955Z"
+    created: "2024-09-11T08:13:41.992503784Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -219,4 +219,4 @@ entries:
     urls:
     - limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-08-26T13:10:43.567826423Z"
+generated: "2024-09-11T08:13:41.983774636Z"
