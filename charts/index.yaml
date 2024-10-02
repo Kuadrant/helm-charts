@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   authorino-operator:
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.226542961Z"
+    created: "2024-10-02T18:58:29.528435271Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 0e293e85604ba0b69030b2d033ceb0448461cdc0b12a44a9b8422c1375b76f20
@@ -34,7 +34,7 @@ entries:
     - authorino-operator-0.13.0.tgz
     version: 0.13.0
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.225699544Z"
+    created: "2024-10-02T18:58:29.527565106Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: f8f8bcc376cd727014c7bac0a0a36d6fd76304c54bae31adcdf226f6dce7c7be
@@ -66,7 +66,7 @@ entries:
     - authorino-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.224829898Z"
+    created: "2024-10-02T18:58:29.526072998Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -99,7 +99,7 @@ entries:
     version: 0.12.0-alpha1
   dns-operator:
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.227804574Z"
+    created: "2024-10-02T18:58:29.529699203Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 7db176fca08eacbb7fca90d55973aebc5c2877e08213e79563e3a66cb5fdedbf
@@ -127,7 +127,7 @@ entries:
     - dns-operator-0.6.0.tgz
     version: 0.6.0
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.227481336Z"
+    created: "2024-10-02T18:58:29.529390206Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 907c1c23697a87de7fcf6351103e919fa03afdecdf9f9b2637068018d70ce359
@@ -155,7 +155,7 @@ entries:
     - dns-operator-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.227193234Z"
+    created: "2024-10-02T18:58:29.529081779Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: 6ecf00957054c592ed615f9c27b18c673a9424b8a02559fa20bf7f0330ad2d17
@@ -184,7 +184,7 @@ entries:
     - dns-operator-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.226877941Z"
+    created: "2024-10-02T18:58:29.528760459Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -214,7 +214,7 @@ entries:
     version: 0.4.0-alpha1
   kuadrant-operator:
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.23348639Z"
+    created: "2024-10-02T18:58:29.535975609Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -266,7 +266,7 @@ entries:
     version: 0.9.0-alpha1
   limitador-operator:
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.234885803Z"
+    created: "2024-10-02T18:58:29.537791662Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 120e68b7b0e48330f1732ed56fabdae15104224f96a756151bfd9b946361f84d
@@ -295,7 +295,7 @@ entries:
     - limitador-operator-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.234527869Z"
+    created: "2024-10-02T18:58:29.53734155Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
@@ -324,7 +324,7 @@ entries:
     - limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.234185705Z"
+    created: "2024-10-02T18:58:29.536907399Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
@@ -353,7 +353,7 @@ entries:
     - limitador-operator-0.10.0-alpha2.tgz
     version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-10-02T17:45:22.233838001Z"
+    created: "2024-10-02T18:58:29.536438804Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -368,4 +368,4 @@ entries:
     urls:
     - limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-10-02T17:45:22.222910352Z"
+generated: "2024-10-02T18:58:29.524650891Z"
