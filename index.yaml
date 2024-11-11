@@ -1,6 +1,121 @@
 apiVersion: v1
 entries:
   authorino-operator:
+  - annotations:
+      artifacthub.io/category: security
+      artifacthub.io/crds: |
+        - kind: Authorino
+          version: v1beta1
+          name: operator.authorino.kuadrant.io
+          displayName: Authorino
+          description: API to install, manage and configure Authorino authorization services.
+        - kind: AuthConfig
+          version: v1beta3
+          name: authorino.kuadrant.io
+          displayName: AuthConfig
+          description: Defines the desired protection for a service in a declarative way.
+      artifacthub.io/crdsExamples: |
+        - apiVersion: operator.authorino.kuadrant.io/v1beta1
+          kind: Authorino
+          metadata:
+            name: authorino
+          spec:
+            listener:
+              tls:
+                enabled: false
+            oidcServer:
+              tls:
+                enabled: false
+        - apiVersion: authorino.kuadrant.io/v1beta3
+          kind: AuthConfig
+          metadata:
+            name: my-api-protection
+          spec:
+            hosts:
+              - my-api.io
+            authentication:
+              "api-key-users":
+                apiKey:
+                  selector:
+                    matchLabels:
+                      group: friends
+                credentials:
+                  authorizationHeader:
+                    prefix: APIKEY
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Kuadrant
+          url: https://kuadrant.io
+        - name: Authorino Github
+          url: https://github.com/Kuadrant/authorino
+        - name: Authorino Operator Github
+          url: https://github.com/Kuadrant/authorino-operator
+      artifacthub.io/operator: "true"
+      artifacthub.io/operatorCapabilities: Basic Install
+    apiVersion: v2
+    created: "2024-11-11T09:20:35.496440488Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: 936d3f59f25786383ff9385e88c732fb3f91756f73c7c1e6261fad04c92ae4d8
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.14.0/authorino-operator-0.14.0.tgz
+    version: 0.14.0
+  - apiVersion: v2
+    created: "2024-11-11T09:20:35.283114212Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: 373773beafde44f780cff3cfab4f4f5b8278671bcd54b72efa320681de23a15c
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.13.1/authorino-operator-0.13.1.tgz
+    version: 0.13.1
   - apiVersion: v2
     created: "2024-10-02T21:11:33.700524907Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
@@ -66,71 +181,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0/authorino-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2024-07-24T13:03:06.674892807Z"
-    description: Kubernetes operator for managing Authorino instances, a K8s-native
-      AuthN/AuthZ service to protect your APIs.
-    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
-    home: https://kuadrant.io
-    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
-    keywords:
-    - authorino
-    - authn
-    - authz
-    - authorization
-    - authentication
-    - service protection
-    - kubernetes
-    - kuadrant
-    kubeVersion: '>=1.19.0-0'
-    maintainers:
-    - email: mcassola@redhat.com
-      name: Guilherme Cassolato
-    - email: didier@redhat.com
-      name: Didier Di Cesare
-    - email: eastizle@redhat.com
-      name: Eguzki Astiz Lezaun
-    name: authorino-operator
-    sources:
-    - https://github.com/Kuadrant/authorino-operator/
-    - https://github.com/Kuadrant/authorino/
-    type: application
-    urls:
-    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
-    version: 0.12.0-alpha1
-  - apiVersion: v2
-    created: "2024-07-31T08:39:08.983968376Z"
-    description: Kubernetes operator for managing Authorino instances, a K8s-native
-      AuthN/AuthZ service to protect your APIs.
-    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
-    home: https://kuadrant.io
-    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
-    keywords:
-    - authorino
-    - authn
-    - authz
-    - authorization
-    - authentication
-    - service protection
-    - kubernetes
-    - kuadrant
-    kubeVersion: '>=1.19.0-0'
-    maintainers:
-    - email: mcassola@redhat.com
-      name: Guilherme Cassolato
-    - email: didier@redhat.com
-      name: Didier Di Cesare
-    - email: eastizle@redhat.com
-      name: Eguzki Astiz Lezaun
-    name: authorino-operator
-    sources:
-    - https://github.com/Kuadrant/authorino-operator/
-    - https://github.com/Kuadrant/authorino/
-    type: application
-    urls:
-    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
-    version: 0.12.0-alpha1
-  - apiVersion: v2
-    created: "2024-09-17T07:46:45.1534819Z"
+    created: "2024-10-02T21:11:33.413529142Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -194,7 +245,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
     version: 0.12.0-alpha1
   - apiVersion: v2
-    created: "2024-10-02T21:11:33.413529142Z"
+    created: "2024-09-17T07:46:45.1534819Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -321,7 +372,131 @@ entries:
     urls:
     - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
     version: 0.12.0-alpha1
+  - apiVersion: v2
+    created: "2024-11-11T09:20:34.543370952Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
+    version: 0.12.0-alpha1
+  - apiVersion: v2
+    created: "2024-07-31T08:39:08.983968376Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
+    version: 0.12.0-alpha1
+  - apiVersion: v2
+    created: "2024-07-24T13:03:06.674892807Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/authorino-operator-0.12.0-alpha1/authorino-operator-0.12.0-alpha1.tgz
+    version: 0.12.0-alpha1
   dns-operator:
+  - apiVersion: v2
+    created: "2024-11-11T09:20:36.648076973Z"
+    description: Kubernetes operator responsible for reconciling DNS Record custom
+      resources.
+    digest: 8243ee7766625e9b5fcd72957ce0fce6830ed8b15289a12125ed7e88c12da6eb
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - dns
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mnairn@redhat.com
+      name: Michael Nairn
+    - email: cbrookes@redhat.com
+      name: Craig Brookes
+    - email: pbrookes@redhat.com
+      name: Phil Brookes
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    name: dns-operator
+    sources:
+    - https://github.com/Kuadrant/dns-operator/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.7.0/dns-operator-0.7.0.tgz
+    version: 0.7.0
   - apiVersion: v2
     created: "2024-09-17T07:46:45.911414411Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
@@ -408,36 +583,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.4.1/dns-operator-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2024-07-24T13:03:06.811574355Z"
-    description: Kubernetes operator responsible for reconciling DNS Record and Managed
-      Zone custom resources.
-    digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
-    home: https://kuadrant.io
-    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
-    keywords:
-    - dns
-    - managed zone
-    - kubernetes
-    - kuadrant
-    kubeVersion: '>=1.19.0-0'
-    maintainers:
-    - email: mnairn@redhat.com
-      name: Michael Nairn
-    - email: cbrookes@redhat.com
-      name: Craig Brookes
-    - email: pbrookes@redhat.com
-      name: Phil Brookes
-    - email: didier@redhat.com
-      name: Didier Di Cesare
-    name: dns-operator
-    sources:
-    - https://github.com/Kuadrant/dns-operator/
-    type: application
-    urls:
-    - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.4.0-alpha1/dns-operator-0.4.0-alpha1.tgz
-    version: 0.4.0-alpha1
-  - apiVersion: v2
-    created: "2024-07-31T08:39:09.207389527Z"
+    created: "2024-10-02T09:27:42.631896581Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -495,7 +641,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.4.0-alpha1/dns-operator-0.4.0-alpha1.tgz
     version: 0.4.0-alpha1
   - apiVersion: v2
-    created: "2024-10-02T09:27:42.631896581Z"
+    created: "2024-07-31T08:39:09.207389527Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -612,6 +758,64 @@ entries:
     version: 0.4.0-alpha1
   - apiVersion: v2
     created: "2024-11-06T10:31:57.761329883Z"
+    description: Kubernetes operator responsible for reconciling DNS Record and Managed
+      Zone custom resources.
+    digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - dns
+    - managed zone
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mnairn@redhat.com
+      name: Michael Nairn
+    - email: cbrookes@redhat.com
+      name: Craig Brookes
+    - email: pbrookes@redhat.com
+      name: Phil Brookes
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    name: dns-operator
+    sources:
+    - https://github.com/Kuadrant/dns-operator/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.4.0-alpha1/dns-operator-0.4.0-alpha1.tgz
+    version: 0.4.0-alpha1
+  - apiVersion: v2
+    created: "2024-11-11T09:20:35.768238252Z"
+    description: Kubernetes operator responsible for reconciling DNS Record and Managed
+      Zone custom resources.
+    digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - dns
+    - managed zone
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mnairn@redhat.com
+      name: Michael Nairn
+    - email: cbrookes@redhat.com
+      name: Craig Brookes
+    - email: pbrookes@redhat.com
+      name: Phil Brookes
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    name: dns-operator
+    sources:
+    - https://github.com/Kuadrant/dns-operator/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/dns-operator-0.4.0-alpha1/dns-operator-0.4.0-alpha1.tgz
+    version: 0.4.0-alpha1
+  - apiVersion: v2
+    created: "2024-07-24T13:03:06.811574355Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -1047,6 +1251,57 @@ entries:
     urls:
     - https://github.com/Kuadrant/helm-charts/releases/download/kuadrant-operator-0.9.0-alpha1/kuadrant-operator-0.9.0-alpha1.tgz
     version: 0.9.0-alpha1
+  - apiVersion: v2
+    created: "2024-11-11T09:20:37.089575788Z"
+    dependencies:
+    - name: authorino-operator
+      repository: https://kuadrant.io/helm-charts/
+      version: 0.12.0-alpha1
+    - name: limitador-operator
+      repository: https://kuadrant.io/helm-charts/
+      version: 0.10.0-alpha3
+    - name: dns-operator
+      repository: https://kuadrant.io/helm-charts/
+      version: 0.4.0-alpha1
+    description: The Operator to install and manage the lifecycle of the Kuadrant
+      components deployments.
+    digest: 2dcd6f36bc1532f302596463b55302bba0f5c56baf7fff4b942a724204cd5950
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - kuadrant
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - limitador
+    - rate limiting
+    - dns
+    - managed zones
+    - kubernetes
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: acatterm@redhat.com
+      name: Adam Cattermole
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: jfitzpat@redhat.com
+      name: Jim Fitzpatrick
+    - email: chfan@redhat.com
+      name: Kevin Chi Fan
+    name: kuadrant-operator
+    sources:
+    - https://github.com/Kuadrant/kuadrant-operator/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/kuadrant-operator-0.9.0-alpha1/kuadrant-operator-0.9.0-alpha1.tgz
+    version: 0.9.0-alpha1
   limitador-operator:
   - apiVersion: v2
     created: "2024-10-02T09:27:44.620130645Z"
@@ -1310,10 +1565,10 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha3/limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-09-17T07:46:46.438737762Z"
+    created: "2024-11-11T09:20:37.520041374Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
-    digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
+    digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
     home: https://kuadrant.io
     icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
     keywords:
@@ -1336,10 +1591,10 @@ entries:
     - https://github.com/Kuadrant/limitador/
     type: application
     urls:
-    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha2/limitador-operator-0.10.0-alpha2.tgz
-    version: 0.10.0-alpha2
+    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha3/limitador-operator-0.10.0-alpha3.tgz
+    version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-07-24T13:03:07.145974129Z"
+    created: "2024-10-02T21:11:34.98224527Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
@@ -1397,7 +1652,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha2/limitador-operator-0.10.0-alpha2.tgz
     version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-10-02T21:11:34.98224527Z"
+    created: "2024-07-24T13:03:07.145974129Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
@@ -1513,9 +1768,19 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha2/limitador-operator-0.10.0-alpha2.tgz
     version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-07-31T08:39:09.778144327Z"
-    description: A Helm chart for Limitador Operator
-    digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
+    created: "2024-09-17T07:46:46.438737762Z"
+    description: Kubernetes operator for managing Limitador instances, a rate limiting
+      service to protect your APIs.
+    digest: 1582212e7bde4eb6317382398f476ffba47d73c8fc5393e44e1f47f0b508a8f7
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - limitador
+    - rate limiting
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
     maintainers:
     - email: asnaps@redhat.com
       name: Alex Snaps
@@ -1524,12 +1789,15 @@ entries:
     - email: eastizle@redhat.com
       name: Eguzki Astiz Lezaun
     name: limitador-operator
+    sources:
+    - https://github.com/Kuadrant/limitador-operator/
+    - https://github.com/Kuadrant/limitador/
     type: application
     urls:
-    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha1/limitador-operator-0.10.0-alpha1.tgz
-    version: 0.10.0-alpha1
+    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha2/limitador-operator-0.10.0-alpha2.tgz
+    version: 0.10.0-alpha2
   - apiVersion: v2
-    created: "2024-07-24T13:03:06.963502226Z"
+    created: "2024-10-02T21:15:28.86902497Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -1561,7 +1829,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha1/limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
   - apiVersion: v2
-    created: "2024-10-02T21:15:28.86902497Z"
+    created: "2024-07-24T13:03:06.963502226Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -1656,4 +1924,36 @@ entries:
     urls:
     - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha1/limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-11-06T10:31:59.141875824Z"
+  - apiVersion: v2
+    created: "2024-11-11T09:20:37.312093067Z"
+    description: A Helm chart for Limitador Operator
+    digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
+    maintainers:
+    - email: asnaps@redhat.com
+      name: Alex Snaps
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: limitador-operator
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha1/limitador-operator-0.10.0-alpha1.tgz
+    version: 0.10.0-alpha1
+  - apiVersion: v2
+    created: "2024-07-31T08:39:09.778144327Z"
+    description: A Helm chart for Limitador Operator
+    digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
+    maintainers:
+    - email: asnaps@redhat.com
+      name: Alex Snaps
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: limitador-operator
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/releases/download/limitador-operator-0.10.0-alpha1/limitador-operator-0.10.0-alpha1.tgz
+    version: 0.10.0-alpha1
+generated: "2024-11-11T09:20:37.775394935Z"
