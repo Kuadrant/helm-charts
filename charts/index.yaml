@@ -53,7 +53,91 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.387524806Z"
+    appVersion: 0.15.1
+    created: "2024-11-22T14:52:24.901946181Z"
+    description: Kubernetes operator for managing Authorino instances, a K8s-native
+      AuthN/AuthZ service to protect your APIs.
+    digest: 5ec403435ba2e3a28fbbc4f47b1cc30f3e5ac4f784a16fef66fb8c80eabc40d2
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - authorino
+    - authn
+    - authz
+    - authorization
+    - authentication
+    - service protection
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mcassola@redhat.com
+      name: Guilherme Cassolato
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    - email: eastizle@redhat.com
+      name: Eguzki Astiz Lezaun
+    name: authorino-operator
+    sources:
+    - https://github.com/Kuadrant/authorino-operator/
+    - https://github.com/Kuadrant/authorino/
+    type: application
+    urls:
+    - authorino-operator-0.15.1.tgz
+    version: 0.15.1
+  - annotations:
+      artifacthub.io/category: security
+      artifacthub.io/crds: |
+        - kind: Authorino
+          version: v1beta1
+          name: operator.authorino.kuadrant.io
+          displayName: Authorino
+          description: API to install, manage and configure Authorino authorization services.
+        - kind: AuthConfig
+          version: v1beta3
+          name: authorino.kuadrant.io
+          displayName: AuthConfig
+          description: Defines the desired protection for a service in a declarative way.
+      artifacthub.io/crdsExamples: |
+        - apiVersion: operator.authorino.kuadrant.io/v1beta1
+          kind: Authorino
+          metadata:
+            name: authorino
+          spec:
+            listener:
+              tls:
+                enabled: false
+            oidcServer:
+              tls:
+                enabled: false
+        - apiVersion: authorino.kuadrant.io/v1beta3
+          kind: AuthConfig
+          metadata:
+            name: my-api-protection
+          spec:
+            hosts:
+              - my-api.io
+            authentication:
+              "api-key-users":
+                apiKey:
+                  selector:
+                    matchLabels:
+                      group: friends
+                credentials:
+                  authorizationHeader:
+                    prefix: APIKEY
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Kuadrant
+          url: https://kuadrant.io
+        - name: Authorino Github
+          url: https://github.com/Kuadrant/authorino
+        - name: Authorino Operator Github
+          url: https://github.com/Kuadrant/authorino-operator
+      artifacthub.io/operator: "true"
+      artifacthub.io/operatorCapabilities: Basic Install
+    apiVersion: v2
+    created: "2024-11-22T14:52:24.900494114Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 936d3f59f25786383ff9385e88c732fb3f91756f73c7c1e6261fad04c92ae4d8
@@ -85,7 +169,7 @@ entries:
     - authorino-operator-0.14.0.tgz
     version: 0.14.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.386623305Z"
+    created: "2024-11-22T14:52:24.899631853Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 373773beafde44f780cff3cfab4f4f5b8278671bcd54b72efa320681de23a15c
@@ -117,7 +201,7 @@ entries:
     - authorino-operator-0.13.1.tgz
     version: 0.13.1
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.38529207Z"
+    created: "2024-11-22T14:52:24.898808495Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 0e293e85604ba0b69030b2d033ceb0448461cdc0b12a44a9b8422c1375b76f20
@@ -149,7 +233,7 @@ entries:
     - authorino-operator-0.13.0.tgz
     version: 0.13.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.384010842Z"
+    created: "2024-11-22T14:52:24.897916399Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: f8f8bcc376cd727014c7bac0a0a36d6fd76304c54bae31adcdf226f6dce7c7be
@@ -181,7 +265,7 @@ entries:
     - authorino-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.382921731Z"
+    created: "2024-11-22T14:52:24.89616079Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -272,7 +356,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.10.0
-    created: "2024-11-22T14:52:00.387906027Z"
+    created: "2024-11-22T14:52:24.902330369Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 24176740ee4c78140137e8e123f387b7f5bbd3a49dcbb9535822d12595798370
@@ -357,7 +441,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.390877026Z"
+    created: "2024-11-22T14:52:24.904536179Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 17f1e903a0dd6f12d520ca6ebe58ebf04ae7de39104fbfab89532480071ea344
@@ -442,7 +526,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.39014388Z"
+    created: "2024-11-22T14:52:24.904169164Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 911752b9b3f0cd1b0963e1926160f4c4d11b4bb433776685626b74b01282f4ac
@@ -470,7 +554,7 @@ entries:
     - dns-operator-0.8.0.tgz
     version: 0.8.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.389380025Z"
+    created: "2024-11-22T14:52:24.903819981Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 8243ee7766625e9b5fcd72957ce0fce6830ed8b15289a12125ed7e88c12da6eb
@@ -498,7 +582,7 @@ entries:
     - dns-operator-0.7.0.tgz
     version: 0.7.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.389086248Z"
+    created: "2024-11-22T14:52:24.903533717Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 7db176fca08eacbb7fca90d55973aebc5c2877e08213e79563e3a66cb5fdedbf
@@ -526,7 +610,7 @@ entries:
     - dns-operator-0.6.0.tgz
     version: 0.6.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.388812858Z"
+    created: "2024-11-22T14:52:24.903263762Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 907c1c23697a87de7fcf6351103e919fa03afdecdf9f9b2637068018d70ce359
@@ -554,7 +638,7 @@ entries:
     - dns-operator-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.388527155Z"
+    created: "2024-11-22T14:52:24.902990852Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: 6ecf00957054c592ed615f9c27b18c673a9424b8a02559fa20bf7f0330ad2d17
@@ -583,7 +667,7 @@ entries:
     - dns-operator-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.388211025Z"
+    created: "2024-11-22T14:52:24.902679822Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -711,7 +795,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.415715058Z"
+    created: "2024-11-22T14:52:24.928743634Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -859,7 +943,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.412998192Z"
+    created: "2024-11-22T14:52:24.925865378Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -1007,7 +1091,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.409056252Z"
+    created: "2024-11-22T14:52:24.922324972Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -1155,7 +1239,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.404723832Z"
+    created: "2024-11-22T14:52:24.918615732Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -1205,7 +1289,7 @@ entries:
     - kuadrant-operator-1.0.0-rc1.tgz
     version: 1.0.0-rc1
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.396237799Z"
+    created: "2024-11-22T14:52:24.909361131Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -1255,7 +1339,7 @@ entries:
     - kuadrant-operator-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.401913682Z"
+    created: "2024-11-22T14:52:24.915389105Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -1342,7 +1426,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.12.1
-    created: "2024-11-22T14:52:00.419071914Z"
+    created: "2024-11-22T14:52:24.931506234Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: c83ff3d53033b091620b6b66aa186294d9f0c3d13614f2925fb7bb029d244269
@@ -1405,7 +1489,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2024-11-22T14:52:00.418652161Z"
+    created: "2024-11-22T14:52:24.931069027Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 0f6504aeaed79000c008262b30be3355d82f6ec114b35b1679379c4e5fae237f
@@ -1434,7 +1518,7 @@ entries:
     - limitador-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.416809018Z"
+    created: "2024-11-22T14:52:24.93033131Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 120e68b7b0e48330f1732ed56fabdae15104224f96a756151bfd9b946361f84d
@@ -1463,7 +1547,7 @@ entries:
     - limitador-operator-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.416412809Z"
+    created: "2024-11-22T14:52:24.929628827Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
@@ -1492,7 +1576,7 @@ entries:
     - limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2024-11-22T14:52:00.416040034Z"
+    created: "2024-11-22T14:52:24.929168828Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -1507,4 +1591,4 @@ entries:
     urls:
     - limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2024-11-22T14:52:00.381831779Z"
+generated: "2024-11-22T14:52:24.89492441Z"
