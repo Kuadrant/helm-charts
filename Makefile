@@ -47,8 +47,11 @@ helm-index: $(HELM) ## Update the helm repository index
 
 ##@ Sync chart packages
 
+# GitHub Release Asset Browser Download URL, it can be find in the output of the uploaded asse
 BROWSER_DOWNLOAD_URL ?= <BROWSER-DOWNLOAD-URL>
+# Dependency chart name, ie: limitador-operator
 CHART_NAME ?= <CHART-NAME>
+# Dependency chart semver, ie: 1.0.0
 CHART_VERSION ?= <CHART-VERSION>
 
 .PHONY: get-chart
@@ -58,3 +61,20 @@ get-chart: ## Get the chart package from its repository
 .PHONY: delete-chart
 delete-chart: ## Delete the chart package from its repository
 	rm -f ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz
+
+# Organization
+ORG ?= kuadrant
+# GitHub Token with permissions to upload to the release assets
+HELM_WORKFLOWS_TOKEN ?= <YOUR-TOKEN>
+# Github repo name for the helm charts repository
+HELM_REPO_NAME ?= helm-charts
+
+.PHONY: trigger-release
+helm-sync-package-created: ## Trigger the release GH workflow, usually when the chart index has been updated
+	curl -L \
+	  -X POST \
+	  -H "Accept: application/vnd.github+json" \
+	  -H "Authorization: Bearer $(HELM_WORKFLOWS_TOKEN)" \
+	  -H "X-GitHub-Api-Version: 2022-11-28" \
+	  https://api.github.com/repos/$(ORG)/$(HELM_REPO_NAME)/dispatches \
+	  -d '{"event_type":"trigger-release","client_payload":{}}'
