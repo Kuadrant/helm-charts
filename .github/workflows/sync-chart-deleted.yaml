@@ -35,3 +35,9 @@ jobs:
           git add charts
           git commit -m "Sync deleted chart ${{ github.event.client_payload.chart }} version ${{ github.event.client_payload.version }}"
           git push
+
+  trigger-release:
+    needs: build-index
+    name: Calls release workflow
+    uses: ./.github/workflows/release.yaml
+    secrets: inherit
