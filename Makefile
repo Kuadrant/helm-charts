@@ -55,12 +55,13 @@ CHART_NAME ?= <CHART-NAME>
 CHART_VERSION ?= <CHART-VERSION>
 
 .PHONY: get-chart
-get-chart: ## Get the chart package from its repository
+get-chart: ## Get the chart package and prov file from its repository
 	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz $(BROWSER_DOWNLOAD_URL)
+	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz.prov $(BROWSER_DOWNLOAD_URL).prov
 
 .PHONY: delete-chart
-delete-chart: ## Delete the chart package from its repository
-	rm -f ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz
+delete-chart: ## Delete the chart package and prov file from its repository
+	rm -f ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz*
 
 # Organization
 ORG ?= kuadrant
