@@ -1,0 +1,104 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: networking
+  artifacthub.io/crds: |
+    - kind: DNSRecord
+      version: v1alpha1
+      name: dnsrecords.kuadrant.io
+      displayName: DNSRecord
+      description: DNSRecord is the Schema for the dnsrecords API.
+    - kind: DNSHealthCheckProbe
+      version: v1alpha1
+      name: dnshealthcheckprobes.kuadrant.io
+      displayName: DNSHealthCheckProbe
+      description: DNSHealthCheckProbe is the Schema for the dnshealthcheckprobes API.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: kuadrant.io/v1alpha1
+      kind: DNSRecord
+      metadata:
+        labels:
+          app.kubernetes.io/name: dnsrecord
+          app.kubernetes.io/instance: dnsrecord-sample
+          app.kubernetes.io/part-of: dns-operator
+          app.kubernetes.io/managed-by: kustomize
+          app.kubernetes.io/created-by: dns-operator
+        name: dnsrecord-sample
+      spec:
+            providerRef:
+              name: dns-provider-creds
+            endpoints:
+              - dnsName: dnsrecord-simple.example.com
+                recordTTL: 60
+                recordType: A
+                targets:
+                  - 52.215.108.61
+                  - 52.30.101.221
+    - apiVersion: kuadrant.io/v1alpha1
+      kind: DNSHealthCheckProbe
+      metadata:
+        name: $NAME
+      spec:
+        port: 443
+        hostname: test.com
+        address: 192.168.0.16
+        path: /healthz
+        protocol: HTTPS
+        interval: 60s
+        additionalHeadersRef:
+          name: headers
+        failureThreshold: 5
+        allowInsecureCertificate: True
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Github
+      url: https://github.com/Kuadrant/dns-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 0.13.0-alpha1
+description: Kubernetes operator responsible for reconciling DNS Record custom resources.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - dns
+- - kubernetes
+- - kuadrant
+kubeVersion: '>=1.19.0-0'
+maintainers:
+- - email: mnairn@redhat.com
+  name: Michael Nairn
+- - email: cbrookes@redhat.com
+  name: Craig Brookes
+- - email: pbrookes@redhat.com
+  name: Phil Brookes
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+name: dns-operator
+sources:
+- - https://github.com/Kuadrant/dns-operator/
+type: application
+version: 0.13.0-alpha1
+
+...
+files:
+  dns-operator-0.13.0-alpha1.tgz: sha256:18e47c2da9410c275814a8eae7b76fc7dda7ff0ad0a21e5d94718770233e6b59
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJnpfRACRDhkXG+UWt5xwAA6h4MADM1D0ZngwiBmDq3z0Q3VMMA
+oCYUtakPiHBegkaqFvsHye7zbeVOGEUVGIokYnDKtDZOn9ubgRJhrr/RLajUzsQH
+cJziySPBOx8YRZweyBmYYipc98IP8fzInRSvuGMQdALU4ERceyaxGJBLQQOG6aiQ
+HOlVo/q4eNaoXAaIOKKz7ova+rdZpGQ23Af4ozbQBl8hzNLvCjrsY5SFoRGegzeY
+u1tKo+brBbqG3yHO+E1JJZL4HE65Tq3j4u9blVMP0iG/r1nsWncAsBQI63PjcNGP
+tAF2k4MqEePXCKdlSUpWcHuYNqefsMW/OaUeiVRhhAndzzmS1ETkIlD+zQUMvhIr
+qDDDh+KKFDaAJecXVA8/kdNi05Mtpl92JXWgo5N3pBm61E4YbgtMXKj0QsM8LW3N
+cw4Fxy/dligeoSsP5ZkE1LrvSkJG1uqFK7XMOG3COo2BYIm3FzOZuQMRMkCAv6qH
+cc+yKX92NIHy5Tj5FHJvzyIEbcnQWBKq28FGpWWH0Q==
+=F8r/
+-----END PGP SIGNATURE-----
