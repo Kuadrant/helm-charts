@@ -9,19 +9,77 @@ helm repo add kuadrant https://kuadrant.io/helm-charts/ --force-update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-## Installing a Chart
+## Kuadrant operator chart
+The official Kuadrant Kubernetes Operator
 
-Installing a Kuadrant Chart, i.e: `limitador-operator`
-```shell
-helm install limitador-operator kuadrant/limitador-operator
+### Install Dependencies
+Follow the steps below to install the following dependencies for Kuadrant Operator:
+- [Gateway API](https://gateway-api.sigs.k8s.io/)
+- [cert-manager](https://cert-manager.io/)
+- A Gateway Provider [Istio](https://istio.io/latest/docs/ambient/install/helm/) or [Envoy Gateway](https://gateway.envoyproxy.io/)
+
+#### Kubernetes Gateway API:
+
+ ```sh
+ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
+ ```
+
+#### cert-manager
+
+ ```sh
+ helm repo add jetstack https://charts.jetstack.io --force-update
+ helm install \
+   cert-manager jetstack/cert-manager \
+   --namespace cert-manager \
+   --create-namespace \
+   --version v1.15.3 \
+   --set crds.enabled=true
+ ```
+
+#### Gateway Provider (I.E. Istio):
+
+ ```sh
+ helm install sail-operator \
+         --create-namespace \
+         --namespace istio-system \
+         --wait \
+         --timeout=300s \
+         https://github.com/istio-ecosystem/sail-operator/releases/download/0.1.0/sail-operator-0.1.0.tgz
+
+ kubectl apply -f -<<EOF
+ apiVersion: sailoperator.io/v1alpha1
+ kind: Istio
+ metadata:
+   name: default
+ spec:
+   # Supported values for sail-operator v0.1.0 are [v1.22.4,v1.23.0]
+   version: v1.23.0
+   namespace: istio-system
+   # Disable autoscaling to reduce dev resources
+   values:
+     pilot:
+       autoscaleEnabled: false
+ EOF
+ ```
+
+### Install Kuadrant Operator
+
+```sh
+helm repo add kuadrant https://kuadrant.io/helm-charts/ --force-update
+helm install \
+ kuadrant-operator kuadrant/kuadrant-operator \
+ --create-namespace \
+ --namespace kuadrant-system
 ```
 
-This will install the latest released stable version of the Limitador Operator in its default namespace `limitador-operator-system`, if it's needed to install a pre release version (for example `limitador-operator-0.10.0-alpha3.tgz`, one need to pass the `--devel` flag.
+### Parameters
+**Coming soon!** At the moment, there's no configuration parameters exposed.
 
-### Installing charts with dependencies
+## Usage
+Read the documentation and user guides in [Kuadrant.io](https://docs.kuadrant.io).
 
-Some of the Kuadrant charts, Authorino Operator or Kuadrant Operator for example, require some extra dependencies that need to be present in the cluster prior the installation. These are the following:
+## Other Charts
 
-* [Gateway API](https://gateway-api.sigs.k8s.io)
-* A Gateway Provider, for example, [Istio](https://istio.io/latest/docs/setup/install/helm/)
-* [Cert Manager](https://cert-manager.io/docs/installation/helm/)
+* [Authorino Operator](docs/authorino-operator.md)
+* [Limitador Operator](docs/limitador-operator.md)
+* [DNS Operator](docs/dns-operator.md)
