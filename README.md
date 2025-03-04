@@ -79,7 +79,10 @@ helm install \
 Read the documentation and user guides in [Kuadrant.io](https://docs.kuadrant.io).
 
 ## Other Charts
+You can also install individual Kuadrant components via helm charts if you prefer.
 
-* [Authorino Operator](docs/authorino-operator.md)
-* [Limitador Operator](docs/limitador-operator.md)
-* [DNS Operator](docs/dns-operator.md)
+| Chart              | Reference                                                    | Docs                                  |
+|--------------------|--------------------------------------------------------------|---------------------------------------|
+| Limitador operator | `helm install kuadrant-operator kuadrant/limitador-operator` | [install](docs/limitador-operator.md) |
+| Authorino operator | `helm install kuadrant-operator kuadrant/authorino-operator` | [install](docs/authorino-operator.md) |
+| DNS Operator       | `helm install kuadrant-operator kuadrant/dns-operator`       | [install](docs/dns-operator.md)       |
