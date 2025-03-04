@@ -30,6 +30,8 @@ Read the documentation and user guides in the [Getting Started guide](https://gi
 
 ## Other Charts
 
-* [Kuadrant Operator](../README.md)
-* [DNS Operator](dns-operator.md)
-* [Limitador Operator](limitador-operator.md)
+| Chart              | Reference                                                    | Docs                             |
+|--------------------|--------------------------------------------------------------|----------------------------------|
+| Kuadrant operator  | `helm install kuadrant-operator kuadrant/kuadrant-operator`  | [install](../README.md)          |
+| Limitador operator | `helm install kuadrant-operator kuadrant/limitador-operator` | [install](limitador-operator.md) |
+| DNS Operator       | `helm install kuadrant-operator kuadrant/dns-operator`       | [install](dns-operator.md)       |

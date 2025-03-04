@@ -30,6 +30,8 @@ Read the documentation and user guides in the [Getting Started guide](https://gi
 
 ## Other Charts
 
-* [Kuadrant Operator](../README.md)
-* [Authorino Operator](authorino-operator.md)
-* [Limitador Operator](limitador-operator.md)
+| Chart              | Reference                                                    | Docs                             |
+|--------------------|--------------------------------------------------------------|----------------------------------|
+| Kuadrant operator  | `helm install kuadrant-operator kuadrant/kuadrant-operator`  | [install](../README.md)          |
+| Limitador operator | `helm install kuadrant-operator kuadrant/limitador-operator` | [install](limitador-operator.md) |
+| Authorino Operator | `helm install kuadrant-operator kuadrant/authorino-operator` | [install](authorino-operator.md) |
