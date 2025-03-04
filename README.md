@@ -62,6 +62,8 @@ Follow the steps below to install the following dependencies for Kuadrant Operat
  EOF
  ```
 
+One could opt for [Envoy Gateway](https://gateway.envoyproxy.io/latest/install/install-helm/) if preferred.
+
 ### Install Kuadrant Operator
 
 ```sh
