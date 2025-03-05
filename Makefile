@@ -41,9 +41,11 @@ $(HELM):
 .PHONY: helm
 helm: $(HELM) ## Download helm locally if necessary.
 
+REPO_DOWNLOAD_URL=https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/
+
 .PHONY: helm-index
 helm-index: $(HELM) ## Update the helm repository index
-	$(HELM) repo index charts
+	$(HELM) repo index charts --url $(REPO_DOWNLOAD_URL)
 
 ##@ Sync chart packages
 
