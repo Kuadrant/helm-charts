@@ -1,9 +1,10 @@
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
     paths:
-      - 'index.yaml'
+      - 'charts/index.yaml'
 
 jobs:
   build:
