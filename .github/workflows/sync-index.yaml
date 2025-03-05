@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cp -f index.yaml ${{ runner.temp }}/index.yaml
+          cp -f charts/index.yaml ${{ runner.temp }}/index.yaml
       - uses: actions/checkout@v4
         with:
           ref: gh-pages
