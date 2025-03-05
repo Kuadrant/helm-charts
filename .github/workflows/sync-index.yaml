@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'index.yaml'
+
+jobs:
+  build:
+    permissions:
+      contents: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cp -f index.yaml ${{ runner.temp }}/index.yaml
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - run: |
+          cp -f ${{ runner.temp }}/index.yaml .
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add index.yaml
+          git commit --signoff -m "Sync index.yaml from main"
+          git push
