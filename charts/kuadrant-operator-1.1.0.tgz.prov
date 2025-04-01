@@ -1,0 +1,168 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: networking
+  artifacthub.io/crds: |
+    - kind: Kuadrant
+      version: v1beta1
+      name: kuadrants.kuadrant.io
+      displayName: Kuadrant
+      description: Kuadrant configures installations of Kuadrant Service Protection components.
+    - kind: AuthPolicy
+      version: v1
+      name: authpolicies.kuadrant.io
+      displayName: AuthPolicy
+      description: AuthPolicy enables authentication and authorization for service workloads in a Gateway API network.
+    - kind: RateLimitPolicy
+      version: v1
+      name: ratelimitpolicies.kuadrant.io
+      displayName: RateLimitPolicy
+      description: RateLimitPolicy enables rate limiting for service workloads in a Gateway API network.
+    - kind: DNSPolicy
+      version: v1
+      name: dnspolicies.kuadrant.io
+      displayName: DNSPolicy
+      description: DNSPolicy is the Schema for the dnspolicies API.
+    - kind: TLSPolicy
+      version: v1
+      name: tlspolicies.kuadrant.io
+      displayName: TLSPolicy
+      description: TLSPolicy is the Schema for the tlspolicies API.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: kuadrant.io/v1beta1
+      kind: Kuadrant
+      metadata:
+        name: kuadrant-sample
+      spec: {}
+    - apiVersion: kuadrant.io/v1
+      kind: AuthPolicy
+      metadata:
+        name: toystore
+      spec:
+        targetRef:
+          group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: toystore
+        rules:
+          authentication:
+            "apikey":
+              apiKey:
+                selector: {}
+            credentials:
+              authorizationHeader:
+                prefix: APIKEY
+    - apiVersion: kuadrant.io/v1
+      kind: RateLimitPolicy
+      metadata:
+        name: toystore
+      spec:
+        targetRef:
+          group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: toystore
+        limits:
+          toys:
+            rates:
+              - limit: 50
+                window: 1m
+    - apiVersion: kuadrant.io/v1
+      kind: DNSPolicy
+      metadata:
+        name: dnspolicy-sample
+      spec:
+        targetRef:
+          name: example-gateway
+          group: gateway.networking.k8s.io
+          kind: Gateway
+        healthCheck:
+          endpoint: /
+          protocol: HTTP
+    - apiVersion: kuadrant.io/v1
+      kind: TLSPolicy
+      metadata:
+        name: tlspolicy-sample
+      spec:
+        targetRef:
+          name: example-gateway
+          group: gateway.networking.k8s.io
+          kind: Gateway
+        issuerRef:
+          group: cert-manager.io
+          kind: ClusterIssuer
+          name: self-signed-ca
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Github
+      url: https://github.com/Kuadrant/kuadrant-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 1.1.0
+dependencies:
+- - name: authorino-operator
+  repository: https://kuadrant.io/helm-charts/
+  version: 0.18.0
+- - name: limitador-operator
+  repository: https://kuadrant.io/helm-charts/
+  version: 0.13.1
+- - name: dns-operator
+  repository: https://kuadrant.io/helm-charts/
+  version: 0.13.0
+description: The Operator to install and manage the lifecycle of the Kuadrant components
+  deployments.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - kuadrant
+- - authorino
+- - authn
+- - authz
+- - authorization
+- - authentication
+- - service protection
+- - limitador
+- - rate limiting
+- - dns
+- - kubernetes
+kubeVersion: '>=1.19.0-0'
+maintainers:
+- - email: acatterm@redhat.com
+  name: Adam Cattermole
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+- - email: eastizle@redhat.com
+  name: Eguzki Astiz Lezaun
+- - email: mcassola@redhat.com
+  name: Guilherme Cassolato
+- - email: jfitzpat@redhat.com
+  name: Jim Fitzpatrick
+- - email: chfan@redhat.com
+  name: Kevin Chi Fan
+name: kuadrant-operator
+sources:
+- - https://github.com/Kuadrant/kuadrant-operator/
+type: application
+version: 1.1.0
+
+...
+files:
+  kuadrant-operator-1.1.0.tgz: sha256:af5fb5179da9faaa6c9959e77e3c4e46bc055a75b6dd85fdef06070132fb9bb8
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJn67YgCRDhkXG+UWt5xwAAQpQMADEHfdad+fSEttrFcnQ3Cf+b
+JU3VpJgz4V0OHHXQvmxwWOT54Cm4wgBpO0mECt5C+fhxDw5o4YZBBcfyxpHiWhbF
+bpDOn3ZQCPQikKYPM0lp+nKxAaSaJ3P2zqod6pFiFS9eShkTPZ/tQcksjIDbYubi
+buYRv7nKJkkdcylc3NHcrlU72Yd+0r9+m7b+B/Ixhy8uJEDsW3SwPGNqbAIXPtQU
+fYV2x9jKOKNH8o5WH//5avR8xDqy0hK5De2TFo85YSsX6p2FVGCB9dRsTydYQE3n
+vN+6aJpHdJsitRzBzH2gjsu1DIM1sBhH2wvJ9nHm+5PoHY+gTcnn69ygy/KdzKSk
+LJJwMERX0W3i5oNiraazwu9+ZrU0RCQ0sPk9gZ3ftGhI1Wam3d5LD4R0wNdCIGqt
+MrZE7d4IskCtfNZTgM4iyn5FZly9AaHd4ZrOFjqktwUpjDvQjnZFr0YbY+ovduUx
+scgiNBtVxL2nfo/B1Bqt/+HMNOGKzqo7RBgsUC0e3A==
+=+Qz0
+-----END PGP SIGNATURE-----
