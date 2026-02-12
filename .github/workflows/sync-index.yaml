@@ -13,11 +13,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: |
           cp -f charts/index.yaml ${{ runner.temp }}/index.yaml
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
+          token: ${{ secrets.KUADRANT_DEV_PAT }}
           ref: gh-pages
       - run: |
           cp -f ${{ runner.temp }}/index.yaml .
