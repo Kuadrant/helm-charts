@@ -1,3 +1,4 @@
+name: Sync Chart Deleted
 on:
   repository_dispatch:
     types:
