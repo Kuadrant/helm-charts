@@ -1,3 +1,4 @@
+name: Sync Index
 on:
   workflow_dispatch:
   push:

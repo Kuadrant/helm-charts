@@ -1,3 +1,4 @@
+name: Sync Chart Created
 on:
   repository_dispatch:
     types:
