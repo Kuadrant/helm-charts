@@ -16,8 +16,9 @@ jobs:
           go-version: 1.21.x
         id: go
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
+          token: ${{ secrets.KUADRANT_DEV_PAT }}
           fetch-depth: 0
       - name: Delete chart package
         working-directory: ${{ github.workspace }}
