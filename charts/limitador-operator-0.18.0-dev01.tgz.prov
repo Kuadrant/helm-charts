@@ -1,0 +1,83 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: security
+  artifacthub.io/crds: |
+    - kind: Limitador
+      version: v1alpha1
+      name: limitadors.limitador.kuadrant.io
+      displayName: Limitador
+      description: Configures an instance of Limitador Service and defines its limits.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: limitador.kuadrant.io/v1alpha1
+      kind: Limitador
+      metadata:
+        name: limitador-sample
+      spec:
+          listener:
+            http:
+              port: 8080
+            grpc:
+              port: 8081
+          limits:
+            - conditions: ["get_toy == 'yes'"]
+              max_value: 2
+              namespace: toystore-app
+              seconds: 30
+              variables: []
+              name: "toy_get_route"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Github
+      url: https://github.com/Kuadrant/limitador-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 0.18.0-dev01
+description: Kubernetes operator for managing Limitador instances, a rate limiting
+  service to protect your APIs.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - limitador
+- - rate limiting
+- - service protection
+- - kubernetes
+- - kuadrant
+kubeVersion: '>=1.19.0-0'
+maintainers:
+- - email: asnaps@redhat.com
+  name: Alex Snaps
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+- - email: eastizle@redhat.com
+  name: Eguzki Astiz Lezaun
+name: limitador-operator
+sources:
+- - https://github.com/Kuadrant/limitador-operator/
+- - https://github.com/Kuadrant/limitador/
+type: application
+version: 0.18.0-dev01
+
+...
+files:
+  limitador-operator-0.18.0-dev01.tgz: sha256:ea6bf057ce82a731e9eb8cbee19275efdcc25426ee4845c31c70ff9552b8d38a
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJpjd2hCRDhkXG+UWt5xwAA/HIMAB2BOANn0UTdVjqGlOrOIju8
+wk0Kdcpt0z87g2tb818CfD5o9a5yCHsIY6WNBbFXyZqj4RF92OMVH9uaqZ5LnTqy
+s+ad5biFfdeoU4z8b2iyHIBfXhJJQ7cgV2uxLi7aSp3nskgkAR4suHsOF2M8FzXN
+GAmwBAqKGZGcdcGYtPaIUqR1EzsDKX5NSAM+Iiga+qDPlmeFLdEAHV4xG87+GzA6
+LclJTR4N+ZGISiOXhH1Id3TyZGJ4EvuUQ1ORiRI2svqpDQujXBFvTGYm0EjJyV61
+enwKEQELWk/ZBWEf+xNoF4dcAzL6XDo3eEUlnVrlPqvufU3t3wo3taSfzLzw0g77
+hqSX9xwpaonP2fcpwmcl4Gu13KLTEkoRWLLsAkNPzO5XSbfcU0zzZgoS20yiHhX0
+4qCo9zmIxm+JxKiu2FHClOOzGOzaLrExzf7Dcs6mtHLoh2TOyyKKrYNcpUY3EB1H
+OSPOL1fJ9BnlwdCr21pSxhLSQmVZUBgLO/9mVk0PZA==
+=Ss95
+-----END PGP SIGNATURE-----
