@@ -21,9 +21,6 @@ jobs:
         with:
           token: ${{ secrets.KUADRANT_DEV_PAT }}
           fetch-depth: 0
-      - name: Pulling latest changes
-        run: |
-          git pull --ff-only
       - name: Get chart package
         working-directory: ${{ github.workspace }}
         run: |
