@@ -1,0 +1,103 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: security
+  artifacthub.io/crds: |
+    - kind: Authorino
+      version: v1beta1
+      name: operator.authorino.kuadrant.io
+      displayName: Authorino
+      description: API to install, manage and configure Authorino authorization services.
+    - kind: AuthConfig
+      version: v1beta3
+      name: authorino.kuadrant.io
+      displayName: AuthConfig
+      description: Defines the desired protection for a service in a declarative way.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: operator.authorino.kuadrant.io/v1beta1
+      kind: Authorino
+      metadata:
+        name: authorino
+      spec:
+        listener:
+          tls:
+            enabled: false
+        oidcServer:
+          tls:
+            enabled: false
+    - apiVersion: authorino.kuadrant.io/v1beta3
+      kind: AuthConfig
+      metadata:
+        name: my-api-protection
+      spec:
+        hosts:
+          - my-api.io
+        authentication:
+          "api-key-users":
+            apiKey:
+              selector:
+                matchLabels:
+                  group: friends
+            credentials:
+              authorizationHeader:
+                prefix: APIKEY
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Authorino Github
+      url: https://github.com/Kuadrant/authorino
+    - name: Authorino Operator Github
+      url: https://github.com/Kuadrant/authorino-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 0.23.2
+description: Kubernetes operator for managing Authorino instances, a K8s-native AuthN/AuthZ
+  service to protect your APIs.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - authorino
+- - authn
+- - authz
+- - authorization
+- - authentication
+- - service protection
+- - kubernetes
+- - kuadrant
+kubeVersion: '>=1.19.0-0'
+maintainers:
+- - email: mcassola@redhat.com
+  name: Guilherme Cassolato
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+- - email: eastizle@redhat.com
+  name: Eguzki Astiz Lezaun
+name: authorino-operator
+sources:
+- - https://github.com/Kuadrant/authorino-operator/
+- - https://github.com/Kuadrant/authorino/
+type: application
+version: 0.23.2
+
+...
+files:
+  authorino-operator-0.23.2.tgz: sha256:7cf28152c343bbb64be2ee3fe5972755ce1e163eedfc910c3d8051ca8ea15939
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJqDzJ+CRDhkXG+UWt5xwAAZ3oMALCVkO9ua7xA6AYrR+4c7zsr
+MjMx0psETCrKibFPrbcFb+q42hxWUmmjsLb5XkMkxlwXRDlZ8YjVS0rKT7kHtGys
+iIpXyzQyimYZUk1p1YiUiZxSsPYZpH/vQovhJLfo4D1P5Im2enVzUKIQ/eMttqBN
+pgzOcPOqvRFruEoxQueotHkLFLxK41XAPPGweL/bc+IZ7k3W6gkfETufod0MbxAl
+NdxVUgIcj6L4Jr5uxkloS0jPinEFtQfSlJ7mWf1brl4BGxHTDgwIyCpERejBQOsn
+T3YbOujXpQm6jsxyRWfRgg3H/+vm+LtAi675o4BDviWcZAg9nVtdxEhP9EnFyUnj
+b8h2co/nWiDaWizfXo77VOHd9qtnn3Po5H99dtUFM0ML0vTXt75DICJ3YYHKn3qz
+IiHLTHofRN/a1CYBhQNmsR5y8Gn6SMIT6FmVcUIKwk4nIwCaorgxhoxsvxYMYYeX
+ZfNQOKKAS47xB8X+cUEbp02EKav7Dk/oDCR8cLwZUA==
+=cqOL
+-----END PGP SIGNATURE-----
