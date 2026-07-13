@@ -1,0 +1,173 @@
+name: PR Chart Delete
+on:
+  workflow_dispatch:
+    inputs:
+      chart:
+        description: 'Chart name'
+        required: true
+        type: string
+      version:
+        description: 'Chart version'
+        required: true
+        type: string
+      component_repo:
+        description: 'Source component repository (for PR title/body)'
+        required: false
+        type: string
+        default: 'kuadrant'
+
+jobs:
+  create-chart-delete-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      CHART_NAME: ${{ github.event.inputs.chart }}
+      CHART_VERSION: ${{ github.event.inputs.version }}
+      COMPONENT_REPO: ${{ github.event.inputs.component_repo }}
+      BRANCH_NAME: "delete/${{ github.event.inputs.chart }}-${{ github.event.inputs.version }}"
+
+    steps:
+      - name: Set up Go 1.26.x
+        uses: actions/setup-go@7b8cf10d4e4a01d4992d18a89f4d7dc5a3e6d6f4 # v4
+        with:
+          go-version: 1.26.x
+
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Create branch for PR
+        run: |
+          git checkout -b "${{ env.BRANCH_NAME }}"
+
+      - name: Check if chart exists
+        id: chart-check
+        run: |
+          chart_file="charts/${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz"
+          prov_file="charts/${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz.prov"
+          
+          if [[ -f "$chart_file" ]]; then
+            echo "chart_file=$chart_file" >> $GITHUB_OUTPUT
+            echo "prov_file=$prov_file" >> $GITHUB_OUTPUT
+            echo "Found chart: $chart_file"
+            if [[ -f "$prov_file" ]]; then
+              echo "Found provenance: $prov_file"
+            else
+              echo "Provenance file not found: $prov_file"
+            fi
+          else
+            echo "::error::Chart ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }} not found in repository"
+            echo "::error::Expected file: $chart_file"
+            echo "This might be due to a typo in chart name or version"
+            exit 1
+          fi
+
+      - name: Delete chart package
+        run: |
+          echo "Deleting chart package and provenance file..."
+          make delete-chart \
+            CHART_NAME="${{ env.CHART_NAME }}" \
+            CHART_VERSION="${{ env.CHART_VERSION }}"
+
+      - name: Update local index
+        run: |
+          echo "Updating Helm repository index..."
+          make helm-index
+
+      - name: Check if changes exist
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected after deletion"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected - proceeding with PR creation"
+            git status --porcelain
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name "kuadrant-bot"
+          git config --global user.email "kuadrant-bot@users.noreply.github.com"
+          git add charts/
+          git commit -m "Remove ${{ env.CHART_NAME }} version ${{ env.CHART_VERSION }}
+
+          - Chart: ${{ env.CHART_NAME }}
+          - Version: ${{ env.CHART_VERSION }}
+          - Source: ${{ env.COMPONENT_REPO }}
+          - Removed files:
+            - ${{ steps.chart-check.outputs.chart_file }}
+            - ${{ steps.chart-check.outputs.prov_file }}"
+
+      - name: Push branch
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git push origin "${{ env.BRANCH_NAME }}"
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "Remove chart: ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}" \
+            --body "$(cat <<EOF
+          ## Chart Deletion
+
+          This PR removes a chart package from the repository.
+
+          - **Chart**: ${{ env.CHART_NAME }}
+          - **Version**: ${{ env.CHART_VERSION }}
+          - **Source Repository**: ${{ env.COMPONENT_REPO }}
+
+          ### Changes
+          - Removed chart package: \`${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz\`
+          - Removed provenance file: \`${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz.prov\`
+          - Updated Helm repository index
+
+          ### Validation
+          This PR will be validated by CI to ensure:
+          - Helm index consistency after deletion
+          - No broken references remain
+          - Deletion is clean and complete
+
+          ### Warning
+          This action will permanently remove the chart from the public repository.
+          Ensure this deletion is intentional and authorized.
+
+          ---
+          *This PR was created automatically by the chart deletion workflow.*
+          EOF
+          )" \
+            --head "${{ env.BRANCH_NAME }}" \
+            --base main
+
+      - name: Enable auto-merge
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh pr list --head "${{ env.BRANCH_NAME }}" --json number --jq '.[0].number')
+          gh pr merge $PR_NUMBER --auto --squash
+
+
+      - name: Output auto-merge details
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          echo "Created deletion PR for ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}"
+          echo "Branch: ${{ env.BRANCH_NAME }}"
+          echo "Auto-merge enabled - PR will merge automatically after CI validation passes"
+
+      - name: No changes detected
+        if: steps.changes.outputs.has_changes == 'false'
+        run: |
+          echo "::error::No changes detected after attempting to delete ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}"
+          echo "::error::This indicates the deletion failed or chart was already removed"
+          echo "Check if the chart files exist and deletion command worked correctly"
+          exit 1
