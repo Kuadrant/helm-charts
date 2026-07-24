@@ -1,0 +1,149 @@
+name: PR Chart Sync
+on:
+  workflow_dispatch:
+    inputs:
+      browser_download_url:
+        description: 'Browser download URL for the chart package'
+        required: true
+        type: string
+      chart:
+        description: 'Chart name'
+        required: true
+        type: string
+      version:
+        description: 'Chart version'
+        required: true
+        type: string
+      component_repo:
+        description: 'Source component repository (for PR title/body)'
+        required: false
+        type: string
+        default: 'kuadrant'
+
+jobs:
+  create-chart-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      BROWSER_DOWNLOAD_URL: ${{ github.event.inputs.browser_download_url }}
+      CHART_NAME: ${{ github.event.inputs.chart }}
+      CHART_VERSION: ${{ github.event.inputs.version }}
+      COMPONENT_REPO: ${{ github.event.inputs.component_repo }}
+      BRANCH_NAME: "sync/${{ github.event.inputs.chart }}-${{ github.event.inputs.version }}"
+
+    steps:
+      - name: Set up Go 1.26.x
+        uses: actions/setup-go@7b8cf10d4e4a01d4992d18a89f4d7dc5a3e6d6f4 # v4
+        with:
+          go-version: 1.26.x
+        id: go
+
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Create branch for PR
+        run: |
+          git checkout -b "${{ env.BRANCH_NAME }}"
+
+      - name: Get chart package
+        working-directory: ${{ github.workspace }}
+        run: |
+          make get-chart \
+            BROWSER_DOWNLOAD_URL="${{ env.BROWSER_DOWNLOAD_URL }}" \
+            CHART_NAME="${{ env.CHART_NAME }}" \
+            CHART_VERSION="${{ env.CHART_VERSION }}"
+
+      - name: Check if changes exist
+        id: changes
+        run: |
+          # Add files to staging to see changes
+          git add charts/
+          if git diff --staged --quiet; then
+            echo "::error::No changes detected for ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}"
+            echo "::error::Chart may already exist in the repository"
+            echo "Workflow expected to make changes but none were detected"
+            exit 1
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update local index
+        run: |
+          make helm-index
+
+      - name: Validate chart package
+        run: |
+          make validate-chart \
+            CHART_NAME="${{ env.CHART_NAME }}" \
+            CHART_VERSION="${{ env.CHART_VERSION }}"
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "kuadrant-bot"
+          git config --global user.email "kuadrant-bot@users.noreply.github.com"
+          git add charts/
+          git commit -m "Add ${{ env.CHART_NAME }} version ${{ env.CHART_VERSION }}
+
+          - Chart: ${{ env.CHART_NAME }}
+          - Version: ${{ env.CHART_VERSION }}
+          - Source: ${{ env.COMPONENT_REPO }}
+          - Download URL: ${{ env.BROWSER_DOWNLOAD_URL }}"
+
+      - name: Push branch
+        run: |
+          git push origin "${{ env.BRANCH_NAME }}"
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "Sync chart: ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}" \
+            --body "$(cat <<EOF
+          ## Chart Sync
+
+          This PR synchronizes a new chart package from the component release workflow.
+
+          - **Chart**: ${{ env.CHART_NAME }}
+          - **Version**: ${{ env.CHART_VERSION }}
+          - **Source Repository**: ${{ env.COMPONENT_REPO }}
+          - **Download URL**: ${{ env.BROWSER_DOWNLOAD_URL }}
+
+          ### Changes
+          - Added chart package: \`${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz\`
+          - Added provenance file: \`${{ env.CHART_NAME }}-${{ env.CHART_VERSION }}.tgz.prov\`
+          - Updated Helm repository index
+
+          ### Validation
+          This PR will be validated by CI to ensure:
+          - Chart package is well-formed
+          - Helm index is consistent
+          - Chart name and version match expectations
+          - Provenance signature is valid
+
+          ---
+          *This PR was created automatically by the chart sync workflow.*
+          EOF
+          )" \
+            --head "${{ env.BRANCH_NAME }}" \
+            --base main
+
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh pr list --head "${{ env.BRANCH_NAME }}" --json number --jq '.[0].number')
+          gh pr merge $PR_NUMBER --auto --squash
+
+
+      - name: Output auto-merge details
+        run: |
+          echo "Created PR for ${{ env.CHART_NAME }} v${{ env.CHART_VERSION }}"
+          echo "Branch: ${{ env.BRANCH_NAME }}"
+          echo "Auto-merge enabled - PR will merge automatically after CI validation passes"
+

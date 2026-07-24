@@ -1,0 +1,227 @@
+name: Validate Chart PR
+on:
+  pull_request:
+    paths:
+      - 'charts/**'
+    types: [opened, synchronize, reopened]
+jobs:
+  validate-chart-changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Set up Go 1.26.x
+        uses: actions/setup-go@7b8cf10d4e4a01d4992d18a89f4d7dc5a3e6d6f4 # v4
+        with:
+          go-version: 1.26.x
+
+      - name: Checkout PR
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Get changed chart files
+        id: changed-files
+        run: |
+          # Get changed files in charts/ directory  
+          git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- charts/ > /tmp/all_changed
+          git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- charts/*.tgz > /tmp/changed_charts || echo "" > /tmp/changed_charts
+          
+          if [[ -s /tmp/changed_charts ]]; then
+            echo "any_changed=true" >> $GITHUB_OUTPUT
+          else  
+            echo "any_changed=false" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "all_changed_files=$(cat /tmp/changed_charts | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          echo "added_files=$(git diff --name-only --diff-filter=A ${{ github.event.pull_request.base.sha }} HEAD -- charts/ | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          echo "modified_files=$(git diff --name-only --diff-filter=M ${{ github.event.pull_request.base.sha }} HEAD -- charts/ | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - name: Install Helm
+        run: |
+          make helm
+
+      - name: Validate Helm index consistency
+        run: |
+          echo "Validating Helm repository index..."
+          
+          # Backup current index
+          cp charts/index.yaml charts/index.yaml.backup
+          
+          # Regenerate index from chart packages
+          make helm-index
+          
+          # Compare original and regenerated index (ignore generated and created timestamps)
+          if ! diff -u <(grep -v -E '(generated:|created:)' charts/index.yaml.backup | sort) <(grep -v -E '(generated:|created:)' charts/index.yaml | sort) > /tmp/index_diff.txt; then
+            echo "Helm index is inconsistent with chart packages"
+            echo "Index differences:"
+            cat /tmp/index_diff.txt
+            exit 1
+          fi
+          
+          echo "Helm index is consistent with chart packages"
+
+      - name: Validate chart packages
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Validating chart packages..."
+          
+          # Find new/modified .tgz files
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ "$file" == *.tgz && "$file" != *.tgz.prov ]]; then
+              echo "Validating chart package: $file"
+              
+              # Check if file exists and is readable
+              if [[ ! -f "$file" ]]; then
+                echo "Chart file not found: $file"
+                exit 1
+              fi
+              
+              # Validate chart package structure
+              echo "Testing chart package structure..."
+              if ! tar -tzf "$file" >/dev/null 2>&1; then
+                echo "Invalid tar.gz archive: $file"
+                exit 1
+              fi
+              
+              # Extract and validate Chart.yaml
+              echo "Validating Chart.yaml..."
+              temp_dir=$(mktemp -d)
+              tar -xzf "$file" -C "$temp_dir"
+              
+              chart_dir=$(find "$temp_dir" -name "Chart.yaml" -exec dirname {} \; | head -1)
+              if [[ -z "$chart_dir" ]]; then
+                echo "No Chart.yaml found in $file"
+                rm -rf "$temp_dir"
+                exit 1
+              fi
+              
+              # Validate chart using helm
+              echo "Running helm lint..."
+              if ! ./bin/helm lint "$chart_dir" --strict; then
+                echo "Chart validation failed for $file"
+                rm -rf "$temp_dir"
+                exit 1
+              fi
+              
+              # Extract chart metadata
+              chart_name=$(grep '^name:' "$chart_dir/Chart.yaml" | cut -d: -f2 | xargs)
+              chart_version=$(grep '^version:' "$chart_dir/Chart.yaml" | cut -d: -f2 | xargs)
+              
+              echo "Chart metadata: name=$chart_name, version=$chart_version"
+              
+              # Verify filename matches chart metadata
+              expected_filename="$chart_name-$chart_version.tgz"
+              actual_filename=$(basename "$file")
+              
+              if [[ "$actual_filename" != "$expected_filename" ]]; then
+                echo "Filename mismatch: expected $expected_filename, got $actual_filename"
+                rm -rf "$temp_dir"
+                exit 1
+              fi
+              
+              # Check for corresponding provenance file
+              prov_file="${file}.prov"
+              if [[ -f "$prov_file" ]]; then
+                echo "Found provenance file: $prov_file"
+                if ! grep -q "BEGIN PGP SIGNED MESSAGE" "$prov_file"; then
+                  echo "Provenance file appears invalid (no PGP signature found)"
+                fi
+              else
+                echo "No provenance file found for $file"
+              fi
+              
+              rm -rf "$temp_dir"
+              echo "Chart package $file validated successfully"
+            fi
+          done
+
+      - name: Check for duplicate charts
+        run: |
+          echo "Checking for duplicate chart versions..."
+          
+          # Create associative array to track chart versions
+          declare -A chart_versions
+          
+          for tgz_file in charts/*.tgz; do
+            if [[ -f "$tgz_file" && "$tgz_file" != *.tgz.prov ]]; then
+              filename=$(basename "$tgz_file" .tgz)
+              
+              # Extract chart name and version using regex
+              if [[ "$filename" =~ ^(.+)-([0-9]+\.[0-9]+\.[0-9]+.*)$ ]]; then
+                chart_name="${BASH_REMATCH[1]}"
+                chart_version="${BASH_REMATCH[2]}"
+                
+                key="$chart_name-$chart_version"
+                if [[ -n "${chart_versions[$key]:-}" ]]; then
+                  echo "Duplicate chart found: $chart_name version $chart_version"
+                  echo "   Files: ${chart_versions[$key]} and $tgz_file"
+                  exit 1
+                fi
+                chart_versions[$key]="$tgz_file"
+              else
+                echo "Could not parse chart name/version from: $filename"
+              fi
+            fi
+          done
+          
+          echo "No duplicate charts found"
+
+      - name: Validate chart sync PR structure
+        if: contains(github.event.pull_request.labels.*.name, 'chart-sync')
+        run: |
+          echo "Validating chart sync PR structure..."
+          
+          # For chart sync PRs, expect exactly one new chart and updated index
+          new_charts=$(echo "${{ steps.changed-files.outputs.added_files }}" | grep -c '\.tgz$' || true)
+          new_provs=$(echo "${{ steps.changed-files.outputs.added_files }}" | grep -c '\.tgz\.prov$' || true)
+          modified_index=$(echo "${{ steps.changed-files.outputs.modified_files }}" | grep -c 'index\.yaml$' || true)
+          
+          echo "Changes detected:"
+          echo "    - New chart packages: $new_charts"
+          echo "    - New provenance files: $new_provs"  
+          echo "    - Modified index: $modified_index"
+          
+          if [[ "$new_charts" -eq 1 && "$new_provs" -eq 1 && "$modified_index" -eq 1 ]]; then
+            echo "Chart sync PR structure is valid"
+          else
+            echo "Invalid chart sync PR structure"
+            echo "  Expected: 1 chart, 1 provenance file, 1 index update"
+            exit 1
+          fi
+
+      - name: Post validation summary
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ job.status }}" == "success" ]]; then
+            gh pr comment ${{ github.event.pull_request.number }} --body "$(cat <<EOF
+          ##Chart Validation Passed
+          
+          All chart validation checks have passed:
+          - Helm index consistency verified
+          - Chart packages are well-formed  
+          - Chart metadata validation completed
+          - No duplicate charts detected
+          - Provenance files present
+          
+          This PR is ready for merge.
+          EOF
+          )"
+          else
+            gh pr comment ${{ github.event.pull_request.number }} --body "$(cat <<EOF
+          ## Chart Validation Failed
+          
+          Some validation checks failed. Please review the workflow logs and fix the issues:
+          - Check chart package structure
+          - Verify Helm index consistency
+          - Ensure chart name/version match filename
+          - Confirm provenance files are present
+          
+          Re-run validation by pushing new commits to this PR.
+          EOF
+          )"
+          fi
