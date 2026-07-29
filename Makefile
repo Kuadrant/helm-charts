@@ -56,10 +56,13 @@ CHART_NAME ?= <CHART-NAME>
 # Dependency chart semver, ie: 1.0.0
 CHART_VERSION ?= <CHART-VERSION>
 
+KEYRING = $(PROJECT_PATH)/kuadrant-public-key.asc
+
 .PHONY: get-chart
-get-chart: ## Get the chart package and prov file from its repository
+get-chart: $(HELM) ## Get the chart package and prov file from its repository, and verify its provenance
 	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz $(BROWSER_DOWNLOAD_URL)
 	curl -L -o ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz.prov $(BROWSER_DOWNLOAD_URL).prov
+	$(HELM) verify --keyring $(KEYRING) ./charts/$(CHART_NAME)-$(CHART_VERSION).tgz
 
 .PHONY: delete-chart
 delete-chart: ## Delete the chart package and prov file from its repository
