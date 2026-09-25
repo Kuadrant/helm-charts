@@ -1,0 +1,83 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: security
+  artifacthub.io/crds: |
+    - kind: Limitador
+      version: v1alpha1
+      name: limitadors.limitador.kuadrant.io
+      displayName: Limitador
+      description: Configures an instance of Limitador Service and defines its limits.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: limitador.kuadrant.io/v1alpha1
+      kind: Limitador
+      metadata:
+        name: limitador-sample
+      spec:
+          listener:
+            http:
+              port: 8080
+            grpc:
+              port: 8081
+          limits:
+            - conditions: ["get_toy == 'yes'"]
+              max_value: 2
+              namespace: toystore-app
+              seconds: 30
+              variables: []
+              name: "toy_get_route"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Github
+      url: https://github.com/Kuadrant/limitador-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 0.18.5
+description: Kubernetes operator for managing Limitador instances, a rate limiting
+  service to protect your APIs.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - limitador
+- - rate limiting
+- - service protection
+- - kubernetes
+- - kuadrant
+kubeVersion: '>=1.19.0-0'
+maintainers:
+- - email: asnaps@redhat.com
+  name: Alex Snaps
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+- - email: eastizle@redhat.com
+  name: Eguzki Astiz Lezaun
+name: limitador-operator
+sources:
+- - https://github.com/Kuadrant/limitador-operator/
+- - https://github.com/Kuadrant/limitador/
+type: application
+version: 0.18.5
+
+...
+files:
+  limitador-operator-0.18.5.tgz: sha256:b0f8e6e07c3c0fc8a9a4adc807c1ccc11d3ccbde2aedbbc59bea6fe345a18758
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJqtneYCRDhkXG+UWt5xwAA2XkMAG/u/SVy42y9M9h7lRYJhl8K
+TKqqZBmzum89o0NJXVWS/gbPyHWRBc+gSWi8dXNvkzbELEhXTB3ZWef6J+2twwTN
+D7pLQq1PrjePI4UVozxbjYwDA6W6/g4uTRUhuM3UPqBhiFI9J45ENs0M3RGDoqF8
+kQjwUaAThLwBq0FFSuuFE/Pd08iHOkZfgCraNJcC7lWzdfT96SkLlKPTaNpAsCwk
+Qt/jJcAiy45QQH+aZ2LJJBTiNQGH1jLc+r/+b/daLj5fxl2nCqp1YaV6JFBRmXW4
+iSsxmS8i8lHnuf2PX+6EbGdpfot4KwZV+F4Rvu5fiOnZdqI6fyG+FaunsWsjIoak
+7fNMbbBCylT9/JUcKAhlhL2W6qfmlpBYU4FyQP+7VJs99vFFABFfbraRvWV9uta2
+IDSs4HrGwyjD2IoQ/dS0Rs3D2FiB+OGC6CGizIw7SNSULT/kLqgULhXkEufKZTdG
+gdwcWopv1y0vUOhP5jX2h87GvDF3epT3wFdbE4tlNw==
+=bQeL
+-----END PGP SIGNATURE-----
