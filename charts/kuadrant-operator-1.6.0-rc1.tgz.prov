@@ -1,0 +1,189 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/category: networking
+  artifacthub.io/crds: |
+    - kind: Kuadrant
+      version: v1beta1
+      name: kuadrants.kuadrant.io
+      displayName: Kuadrant
+      description: Kuadrant configures installations of Kuadrant Service Protection components.
+    - kind: AuthPolicy
+      version: v1
+      name: authpolicies.kuadrant.io
+      displayName: AuthPolicy
+      description: AuthPolicy enables authentication and authorization for service workloads in a Gateway API network.
+    - kind: RateLimitPolicy
+      version: v1
+      name: ratelimitpolicies.kuadrant.io
+      displayName: RateLimitPolicy
+      description: RateLimitPolicy enables rate limiting for service workloads in a Gateway API network.
+    - kind: DNSPolicy
+      version: v1
+      name: dnspolicies.kuadrant.io
+      displayName: DNSPolicy
+      description: DNSPolicy is the Schema for the dnspolicies API.
+    - kind: TLSPolicy
+      version: v1
+      name: tlspolicies.kuadrant.io
+      displayName: TLSPolicy
+      description: TLSPolicy is the Schema for the tlspolicies API.
+    - kind: APIProduct
+      version: v1alpha1
+      name: apiproducts.devportal.kuadrant.io
+      displayName: APIProduct
+      description: APIProduct represents an API offering in a developer portal with rate limiting plans.
+    - kind: APIKey
+      version: v1alpha1
+      name: apikeys.devportal.kuadrant.io
+      displayName: APIKey
+      description: APIKey represents an API key for accessing developer portal APIs.
+  artifacthub.io/crdsExamples: |
+    - apiVersion: kuadrant.io/v1beta1
+      kind: Kuadrant
+      metadata:
+        name: kuadrant-sample
+      spec: {}
+    - apiVersion: kuadrant.io/v1
+      kind: AuthPolicy
+      metadata:
+        name: toystore
+      spec:
+        targetRef:
+          group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: toystore
+        rules:
+          authentication:
+            "apikey":
+              apiKey:
+                selector: {}
+            credentials:
+              authorizationHeader:
+                prefix: APIKEY
+    - apiVersion: kuadrant.io/v1
+      kind: RateLimitPolicy
+      metadata:
+        name: toystore
+      spec:
+        targetRef:
+          group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: toystore
+        limits:
+          toys:
+            rates:
+              - limit: 50
+                window: 1m
+    - apiVersion: kuadrant.io/v1
+      kind: DNSPolicy
+      metadata:
+        name: dnspolicy-sample
+      spec:
+        targetRef:
+          name: example-gateway
+          group: gateway.networking.k8s.io
+          kind: Gateway
+        healthCheck:
+          endpoint: /
+          protocol: HTTP
+    - apiVersion: kuadrant.io/v1
+      kind: TLSPolicy
+      metadata:
+        name: tlspolicy-sample
+      spec:
+        targetRef:
+          name: example-gateway
+          group: gateway.networking.k8s.io
+          kind: Gateway
+        issuerRef:
+          group: cert-manager.io
+          kind: ClusterIssuer
+          name: self-signed-ca
+    - apiVersion: devportal.kuadrant.io/v1alpha1
+      kind: APIProduct
+      metadata:
+        name: petstore-api
+        namespace: petstore
+      spec:
+        displayName: Petstore API
+        description: RESTful API for managing pet store inventory
+        targetRef:
+          group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: petstore
+        publishStatus: Published
+    - apiVersion: devportal.kuadrant.io/v1alpha1
+      kind: APIKey
+      metadata:
+        name: petstore-access
+        namespace: petstore
+      spec:
+        apiProductRef:
+          name: petstore-api
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Kuadrant
+      url: https://kuadrant.io
+    - name: Github
+      url: https://github.com/Kuadrant/kuadrant-operator
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+    url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+apiVersion: v2
+appVersion: 1.6.0-rc1
+description: The Operator to install and manage the lifecycle of the Kuadrant components
+  deployments.
+home: https://kuadrant.io
+icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+keywords:
+- - kuadrant
+- - authorino
+- - authn
+- - authz
+- - authorization
+- - authentication
+- - service protection
+- - limitador
+- - rate limiting
+- - dns
+- - kubernetes
+kubeVersion: '>=1.25.0-0'
+maintainers:
+- - email: acatterm@redhat.com
+  name: Adam Cattermole
+- - email: didier@redhat.com
+  name: Didier Di Cesare
+- - email: eastizle@redhat.com
+  name: Eguzki Astiz Lezaun
+- - email: mcassola@redhat.com
+  name: Guilherme Cassolato
+- - email: jfitzpat@redhat.com
+  name: Jim Fitzpatrick
+- - email: chfan@redhat.com
+  name: Kevin Chi Fan
+name: kuadrant-operator
+sources:
+- - https://github.com/Kuadrant/kuadrant-operator/
+type: application
+version: 1.6.0-rc1
+
+...
+files:
+  kuadrant-operator-1.6.0-rc1.tgz: sha256:af315a20400fe7dcd0cf2626edacd0ec91ad5ebc8ab35ff61acb2576820a31c8
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJqtqB2CRDhkXG+UWt5xwAAL0YMAA8mr20BjC8jairK3wCwm5rP
+JkoVOQ1hOAotwEz7MAfkdFLsOWov7t1fw8AEpRmtMHwc9cuhn/UP6Jl7BbK0XC92
+1Jsf/IxSOujHAM5sb8VbQ1mK+CM7IlbRgVLjpvB6YXf/Ysyw+RXGl9cGQa54J22F
+IVO5OnIDTVg3QByj5OcaIUOnfPlXS5ZEs3vCRqPgqUFvf/R98XaqYza1d2tE9aaF
+XKh3ceQngPRWXQmGWh6+uVc6IgwNjNqA6rYEwqzBH74okgnqoPDPpEC3k8lsqnhL
+OZ2nF/yD28JASpaUNTpWAhOZpE2B9Big12ZiY72A6ahxbFAl1OL4EMinR8qk3OUY
+wDf4MGSosRSCU90QOfJswICkUcz9nbe0dHFXJxrvLngk79hu1bQeX7DB5z9JXDz8
+h714iY9PRi6rrKEQBU8WYUy4aYY/xuf9e9qmp35h5f7jhfBa35nUCN2wBHSDDQwx
+9u/y+QpiXmqf6l58yAgJk47wAZKeZJMCNJU0RyXIsg==
+=3qb0
+-----END PGP SIGNATURE-----
