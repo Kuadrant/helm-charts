@@ -57,7 +57,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.27.0
-    created: "2026-11-25T19:22:45.43978444Z"
+    created: "2026-11-26T11:09:10.332466342Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 605f1d107cde689b3c4f28453791ce8deffa1230585f68902b7f57d947f57ed3
@@ -144,7 +144,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.26.0
-    created: "2026-11-25T19:22:45.439181757Z"
+    created: "2026-11-26T11:09:10.33152115Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 82715600bd443b50e81d5822a37ad329957f53c29b2978f4b9ba1ecddf2fa7cc
@@ -231,7 +231,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.25.4
-    created: "2026-11-25T19:22:45.438562349Z"
+    created: "2026-11-26T11:09:10.330514605Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 8ea9a5ee8a29a880f500277c086c1268101094f65e40a19bfee237bf5cec0956
@@ -318,7 +318,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.25.3
-    created: "2026-11-25T19:22:45.437336663Z"
+    created: "2026-11-26T11:09:10.329587228Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 149012bdc74572ea8172ee506feeac124f2edf07bdf4003e176d75614a5b2183
@@ -405,7 +405,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.25.2
-    created: "2026-11-25T19:22:45.436397151Z"
+    created: "2026-11-26T11:09:10.328680829Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: e6f9fc7ddd640d791f15dd93493a67e5858ce973a482ed609c54b1fb398503e6
@@ -492,7 +492,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.25.1
-    created: "2026-11-25T19:22:45.435608142Z"
+    created: "2026-11-26T11:09:10.327010006Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b3753e94828d2404c43176f4407d4127f74d251b2814b986df598c58cdff9e3b
@@ -579,7 +579,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.25.0
-    created: "2026-11-25T19:22:45.434803769Z"
+    created: "2026-11-26T11:09:10.326148494Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: cdffaff8884272439bb8364fd822a0dfb5c5a6e9ec9f0aceb84b435cb7b6cd34
@@ -666,7 +666,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.24.1
-    created: "2026-11-25T19:22:45.433531108Z"
+    created: "2026-11-26T11:09:10.325251515Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 5350c32845e1edecd01332df6b9cff3970502a96e125da8aa39ccad4cd06d90f
@@ -753,7 +753,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.24.0
-    created: "2026-11-25T19:22:45.432731913Z"
+    created: "2026-11-26T11:09:10.323845625Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 534015583d348552639d630126c7fadf6149f6aa535f371f92ea0ca818b68ebf
@@ -840,7 +840,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.5
-    created: "2026-11-25T19:22:45.431907402Z"
+    created: "2026-11-26T11:09:10.322794271Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 83992bc07ee3bd2dc6c6a6e2c971c38274d14415013077594ce3a335eca0f272
@@ -927,7 +927,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.4
-    created: "2026-11-25T19:22:45.430704434Z"
+    created: "2026-11-26T11:09:10.321951445Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: a3302fbb0da6f39946b80b9deecf9d7f1899d566bf59ef53891b39403be46fc9
@@ -1014,7 +1014,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.3
-    created: "2026-11-25T19:22:45.42983818Z"
+    created: "2026-11-26T11:09:10.321077125Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: ae1de82880b05a134206cc306338dbade020e29e367ccbc796b3f65ba4a8055c
@@ -1101,7 +1101,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.2
-    created: "2026-11-25T19:22:45.429028651Z"
+    created: "2026-11-26T11:09:10.319446865Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 7cf28152c343bbb64be2ee3fe5972755ce1e163eedfc910c3d8051ca8ea15939
@@ -1188,7 +1188,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.1
-    created: "2026-11-25T19:22:45.428250467Z"
+    created: "2026-11-26T11:09:10.318523813Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 98bf0afc23455b9ac232f2d74e47286edf75a863d01b535ebc440560dd21ca92
@@ -1275,7 +1275,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.23.0
-    created: "2026-11-25T19:22:45.426646946Z"
+    created: "2026-11-26T11:09:10.317663756Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: c09dfac9d56c1b5d2d7d39952bc0e79a9315bdfb2160adfdb2c7e256d175ea36
@@ -1362,7 +1362,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.22.0
-    created: "2026-11-25T19:22:45.425853991Z"
+    created: "2026-11-26T11:09:10.316134004Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 053ae73b3de84168b6c9bbb0fcb74c49a8a3ba1382027e0a456a9798bfd5404b
@@ -1449,7 +1449,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.21.0
-    created: "2026-11-25T19:22:45.425101906Z"
+    created: "2026-11-26T11:09:10.31526384Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: bdec0f4a9c14cb82a7dcc3c1ae9e065f6cca5853f1a04de5bc75468ea08c37ea
@@ -1536,7 +1536,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.19.0
-    created: "2026-11-25T19:22:45.423842955Z"
+    created: "2026-11-26T11:09:10.314393434Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 1b69ce1291c519522537da489320a6559767c306c72b1a7fd34eef4788c0fda3
@@ -1623,7 +1623,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.0
-    created: "2026-11-25T19:22:45.423094666Z"
+    created: "2026-11-26T11:09:10.313524014Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: c84d788ba8f06462539a9a04f0d7a6f5012c98f2723ea44ffd19d9303dc67a17
@@ -1707,7 +1707,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.16.0
-    created: "2026-11-25T19:22:45.422288762Z"
+    created: "2026-11-26T11:09:10.311794709Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 6b780ee027cbc69ca1463c759594d4ff662177c9e655febaae8ffc157b8b9a3d
@@ -1791,7 +1791,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.15.1
-    created: "2026-11-25T19:22:45.421495947Z"
+    created: "2026-11-26T11:09:10.310940873Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 5ec403435ba2e3a28fbbc4f47b1cc30f3e5ac4f784a16fef66fb8c80eabc40d2
@@ -1874,7 +1874,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.419760856Z"
+    created: "2026-11-26T11:09:10.310079385Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 936d3f59f25786383ff9385e88c732fb3f91756f73c7c1e6261fad04c92ae4d8
@@ -1906,7 +1906,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/authorino-operator-0.14.0.tgz
     version: 0.14.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.418574968Z"
+    created: "2026-11-26T11:09:10.308599396Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 373773beafde44f780cff3cfab4f4f5b8278671bcd54b72efa320681de23a15c
@@ -1938,7 +1938,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/authorino-operator-0.13.1.tgz
     version: 0.13.1
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.417848512Z"
+    created: "2026-11-26T11:09:10.307493605Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: 0e293e85604ba0b69030b2d033ceb0448461cdc0b12a44a9b8422c1375b76f20
@@ -1970,7 +1970,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/authorino-operator-0.13.0.tgz
     version: 0.13.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.41679154Z"
+    created: "2026-11-26T11:09:10.306469532Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: f8f8bcc376cd727014c7bac0a0a36d6fd76304c54bae31adcdf226f6dce7c7be
@@ -2002,7 +2002,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/authorino-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.415533015Z"
+    created: "2026-11-26T11:09:10.305474881Z"
     description: Kubernetes operator for managing Authorino instances, a K8s-native
       AuthN/AuthZ service to protect your APIs.
     digest: b059e4204b5d291c6e847240c7929c9a43b1523f5e48ef3b874202b38d1e5c61
@@ -2096,7 +2096,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.0
-    created: "2026-11-25T19:22:45.445801027Z"
+    created: "2026-11-26T11:09:10.338737269Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 35a5606c34f0e09fbded89fd29f347c12f277db416e3432bd0c01c08de550fe8
@@ -2184,8 +2184,97 @@ entries:
         fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
+    appVersion: 0.17.4
+    created: "2026-11-26T11:09:10.338450474Z"
+    description: Kubernetes operator responsible for reconciling DNS Record custom
+      resources.
+    digest: 9d5e0b8021543ef273a7060001e2a39ccb978789bb6efa0b14be4ae50d62bf13
+    home: https://kuadrant.io
+    icon: https://raw.githubusercontent.com/Kuadrant/kuadrant.github.io/main/static/img/apple-touch-icon.png
+    keywords:
+    - dns
+    - kubernetes
+    - kuadrant
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: mnairn@redhat.com
+      name: Michael Nairn
+    - email: cbrookes@redhat.com
+      name: Craig Brookes
+    - email: pbrookes@redhat.com
+      name: Phil Brookes
+    - email: didier@redhat.com
+      name: Didier Di Cesare
+    name: dns-operator
+    sources:
+    - https://github.com/Kuadrant/dns-operator/
+    type: application
+    urls:
+    - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.17.4.tgz
+    version: 0.17.4
+  - annotations:
+      artifacthub.io/category: networking
+      artifacthub.io/crds: |
+        - kind: DNSRecord
+          version: v1alpha1
+          name: dnsrecords.kuadrant.io
+          displayName: DNSRecord
+          description: DNSRecord is the Schema for the dnsrecords API.
+        - kind: DNSHealthCheckProbe
+          version: v1alpha1
+          name: dnshealthcheckprobes.kuadrant.io
+          displayName: DNSHealthCheckProbe
+          description: DNSHealthCheckProbe is the Schema for the dnshealthcheckprobes API.
+      artifacthub.io/crdsExamples: |
+        - apiVersion: kuadrant.io/v1alpha1
+          kind: DNSRecord
+          metadata:
+            labels:
+              app.kubernetes.io/name: dnsrecord
+              app.kubernetes.io/instance: dnsrecord-sample
+              app.kubernetes.io/part-of: dns-operator
+              app.kubernetes.io/managed-by: kustomize
+              app.kubernetes.io/created-by: dns-operator
+            name: dnsrecord-sample
+          spec:
+                providerRef:
+                  name: dns-provider-creds
+                endpoints:
+                  - dnsName: dnsrecord-simple.example.com
+                    recordTTL: 60
+                    recordType: A
+                    targets:
+                      - 52.215.108.61
+                      - 52.30.101.221
+        - apiVersion: kuadrant.io/v1alpha1
+          kind: DNSHealthCheckProbe
+          metadata:
+            name: $NAME
+          spec:
+            port: 443
+            hostname: test.com
+            address: 192.168.0.16
+            path: /healthz
+            protocol: HTTPS
+            interval: 60s
+            additionalHeadersRef:
+              name: headers
+            failureThreshold: 5
+            allowInsecureCertificate: True
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Kuadrant
+          url: https://kuadrant.io
+        - name: Github
+          url: https://github.com/Kuadrant/dns-operator
+      artifacthub.io/operator: "true"
+      artifacthub.io/operatorCapabilities: Basic Install
+      artifacthub.io/signKey: |
+        fingerprint: 8A2150B44E1994E1E91ED9E5E19171BE516B79C7
+        url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
+    apiVersion: v2
     appVersion: 0.17.3
-    created: "2026-11-25T19:22:45.445511809Z"
+    created: "2026-11-26T11:09:10.338161875Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 56c9422a960320d094559c65537bbbf250bafa2ce6770698301d7ad74ef84155
@@ -2274,7 +2363,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.2
-    created: "2026-11-25T19:22:45.445216651Z"
+    created: "2026-11-26T11:09:10.337856167Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: e34f53f1d860aa2b2354a6c405684c49a398c116e363261279467ad8d8988903
@@ -2363,7 +2452,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.1
-    created: "2026-11-25T19:22:45.444894604Z"
+    created: "2026-11-26T11:09:10.337545398Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: ba0cbae2a3f10804814de1090254b60a04d0ba8c3d5e37ac8f5faf76ebf9dbd6
@@ -2452,7 +2541,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.0
-    created: "2026-11-25T19:22:45.444535101Z"
+    created: "2026-11-26T11:09:10.337256102Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: b684681106f15bab7ac4cb2e343a9ded8343fbb2f8e3018f58e7a400faa25b12
@@ -2541,7 +2630,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.16.4
-    created: "2026-11-25T19:22:45.444088119Z"
+    created: "2026-11-26T11:09:10.336940544Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: a8ad645905ebaf29c7b24e58fc9b6407e6346485b36dced9bc94d58178528d60
@@ -2630,7 +2719,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.16.3
-    created: "2026-11-25T19:22:45.443674656Z"
+    created: "2026-11-26T11:09:10.336342391Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 155f9148a755a321df4e8a78d5ff838c27f0e9557764bdafa0c345329457b81a
@@ -2719,7 +2808,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.16.2
-    created: "2026-11-25T19:22:45.44338703Z"
+    created: "2026-11-26T11:09:10.33564143Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 8ec8a81b7c2f32e7b729c44900f7d0d70f8b2a1134a742cf9cbe0ee66f637c57
@@ -2808,7 +2897,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.16.0
-    created: "2026-11-25T19:22:45.44309007Z"
+    created: "2026-11-26T11:09:10.33530271Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 50f3dfa28ad614ea028dd1f4680e8acab66e5e275112a30751d9213daf6eb12b
@@ -2897,7 +2986,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.15.0
-    created: "2026-11-25T19:22:45.442763075Z"
+    created: "2026-11-26T11:09:10.334987174Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 0b24c663fbf492b93eedd217e2c0b6e325355ed1081880d80c25539281033858
@@ -2986,7 +3075,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.14.0
-    created: "2026-11-25T19:22:45.442451293Z"
+    created: "2026-11-26T11:09:10.334654585Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: eee4796d93ec4ef167fc40db72fd8bb96b822334fdb24e9467e219de34854a00
@@ -3075,7 +3164,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.13.0
-    created: "2026-11-25T19:22:45.442109487Z"
+    created: "2026-11-26T11:09:10.334353202Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 9833ebff209215eb96545e19a86a770bfe065dc64d73c5cc76af5e2054a87ee4
@@ -3164,7 +3253,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.13.0-alpha1
-    created: "2026-11-25T19:22:45.441315049Z"
+    created: "2026-11-26T11:09:10.334052452Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 18e47c2da9410c275814a8eae7b76fc7dda7ff0ad0a21e5d94718770233e6b59
@@ -3250,7 +3339,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.12.0
-    created: "2026-11-25T19:22:45.440983267Z"
+    created: "2026-11-26T11:09:10.333689022Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 84b3e33d30c117488521f45ba62beca64a88b316f00c63998476c6ebfc951afc
@@ -3336,7 +3425,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.11.0
-    created: "2026-11-25T19:22:45.440691885Z"
+    created: "2026-11-26T11:09:10.33339148Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 9efd528999312846de78d25717122ba5078a3d970157f6758be252037cd1f974
@@ -3422,7 +3511,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.10.1
-    created: "2026-11-25T19:22:45.440396367Z"
+    created: "2026-11-26T11:09:10.333097323Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: cb26b9be6f62c738ffb2c8573e7be82c804b8789dd9cf886be0f0f4221c24dfb
@@ -3508,7 +3597,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.10.0
-    created: "2026-11-25T19:22:45.440094069Z"
+    created: "2026-11-26T11:09:10.332774212Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 24176740ee4c78140137e8e123f387b7f5bbd3a49dcbb9535822d12595798370
@@ -3593,7 +3682,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.448199752Z"
+    created: "2026-11-26T11:09:10.340902288Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 17f1e903a0dd6f12d520ca6ebe58ebf04ae7de39104fbfab89532480071ea344
@@ -3678,7 +3767,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.447896743Z"
+    created: "2026-11-26T11:09:10.340233235Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 911752b9b3f0cd1b0963e1926160f4c4d11b4bb433776685626b74b01282f4ac
@@ -3706,7 +3795,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.8.0.tgz
     version: 0.8.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.447614825Z"
+    created: "2026-11-26T11:09:10.339952606Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 8243ee7766625e9b5fcd72957ce0fce6830ed8b15289a12125ed7e88c12da6eb
@@ -3734,7 +3823,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.7.0.tgz
     version: 0.7.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.447384734Z"
+    created: "2026-11-26T11:09:10.339711127Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 7db176fca08eacbb7fca90d55973aebc5c2877e08213e79563e3a66cb5fdedbf
@@ -3762,7 +3851,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.6.0.tgz
     version: 0.6.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.447129055Z"
+    created: "2026-11-26T11:09:10.339471878Z"
     description: Kubernetes operator responsible for reconciling DNS Record custom
       resources.
     digest: 907c1c23697a87de7fcf6351103e919fa03afdecdf9f9b2637068018d70ce359
@@ -3790,7 +3879,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.446838274Z"
+    created: "2026-11-26T11:09:10.339268047Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: 6ecf00957054c592ed615f9c27b18c673a9424b8a02559fa20bf7f0330ad2d17
@@ -3819,7 +3908,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/dns-operator-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.446338794Z"
+    created: "2026-11-26T11:09:10.339016708Z"
     description: Kubernetes operator responsible for reconciling DNS Record and Managed
       Zone custom resources.
     digest: d023c455bbf45d5ea341880696cc7395c4536f7ae2436ee52a0a6dbd6b8e5562
@@ -3982,7 +4071,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.1-rc1
-    created: "2026-11-25T19:22:45.573504134Z"
+    created: "2026-11-26T11:09:10.480097595Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 56e2a5b53812bf3337e8a00449e0f54279ccc3f24935663233880343371fa219
@@ -4155,7 +4244,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0
-    created: "2026-11-25T19:22:45.571057518Z"
+    created: "2026-11-26T11:09:10.477139222Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 5db2e7a95c30d9751b29bc8e0993f2b17a6ebf7a0c1ef2753417cae4fb041560
@@ -4328,7 +4417,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc7
-    created: "2026-11-25T19:22:45.569184993Z"
+    created: "2026-11-26T11:09:10.475161896Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 3d2294ac602628cdb2f1df8cebf64546d651c888fecfe8d1710f12f83a7dd9b9
@@ -4501,7 +4590,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc6
-    created: "2026-11-25T19:22:45.566397202Z"
+    created: "2026-11-26T11:09:10.472525312Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 29b3ae4a9b8129e24961ebfbaa43fa422168a4559cd8ba9767744731d9d1f8dc
@@ -4674,7 +4763,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc5
-    created: "2026-11-25T19:22:45.564566259Z"
+    created: "2026-11-26T11:09:10.470164197Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 39b89ec5c02f045940214ca418609dab6b91c48b473ecb903dab7a997bb76375
@@ -4847,7 +4936,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc4
-    created: "2026-11-25T19:22:45.562225459Z"
+    created: "2026-11-26T11:09:10.467300956Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: fa74443217e13522e52f2ea8dcad77834c94421f3fd17d014ddba45fb98c42f1
@@ -5020,7 +5109,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc2
-    created: "2026-11-25T19:22:45.560379243Z"
+    created: "2026-11-26T11:09:10.465288952Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: 533c0ed1895863680c1f1a6b2de901395fe4aa17340becd037845864e453ecd4
@@ -5193,7 +5282,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.6.0-rc1
-    created: "2026-11-25T19:22:45.55739484Z"
+    created: "2026-11-26T11:09:10.462436455Z"
     description: The Operator to install and manage the lifecycle of the Kuadrant
       components deployments.
     digest: af315a20400fe7dcd0cf2626edacd0ec91ad5ebc8ab35ff61acb2576820a31c8
@@ -5366,7 +5455,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.4
-    created: "2026-11-25T19:22:45.555568654Z"
+    created: "2026-11-26T11:09:10.4603408Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -5549,7 +5638,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.4-rc1
-    created: "2026-11-25T19:22:45.55209156Z"
+    created: "2026-11-26T11:09:10.455955052Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -5732,7 +5821,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.3
-    created: "2026-11-25T19:22:45.547249234Z"
+    created: "2026-11-26T11:09:10.451789742Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -5915,7 +6004,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.2
-    created: "2026-11-25T19:22:45.543463354Z"
+    created: "2026-11-26T11:09:10.447391416Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -6098,7 +6187,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.2-rc1
-    created: "2026-11-25T19:22:45.539862948Z"
+    created: "2026-11-26T11:09:10.443913568Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -6281,7 +6370,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.1
-    created: "2026-11-25T19:22:45.536951603Z"
+    created: "2026-11-26T11:09:10.439651039Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -6464,7 +6553,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.0
-    created: "2026-11-25T19:22:45.53340345Z"
+    created: "2026-11-26T11:09:10.435259751Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -6647,7 +6736,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.5.0-rc3
-    created: "2026-11-25T19:22:45.529568041Z"
+    created: "2026-11-26T11:09:10.430588139Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -6830,7 +6919,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.7
-    created: "2026-11-25T19:22:45.526052611Z"
+    created: "2026-11-26T11:09:10.426567238Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7013,7 +7102,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.7-rc1
-    created: "2026-11-25T19:22:45.523158702Z"
+    created: "2026-11-26T11:09:10.42317603Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7196,7 +7285,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.3
-    created: "2026-11-25T19:22:45.519697562Z"
+    created: "2026-11-26T11:09:10.418938472Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7379,7 +7468,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.2
-    created: "2026-11-25T19:22:45.51581598Z"
+    created: "2026-11-26T11:09:10.414674706Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7562,7 +7651,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.1
-    created: "2026-11-25T19:22:45.511920351Z"
+    created: "2026-11-26T11:09:10.41022193Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7745,7 +7834,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2026-11-25T19:22:45.508681757Z"
+    created: "2026-11-26T11:09:10.406566158Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -7897,7 +7986,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.3.1
-    created: "2026-11-25T19:22:45.50580926Z"
+    created: "2026-11-26T11:09:10.403531116Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8049,7 +8138,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.3.0
-    created: "2026-11-25T19:22:45.502306679Z"
+    created: "2026-11-26T11:09:10.399793459Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8201,7 +8290,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.3.0-rc2
-    created: "2026-11-25T19:22:45.498745371Z"
+    created: "2026-11-26T11:09:10.396296296Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8353,7 +8442,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.3.0-alpha2
-    created: "2026-11-25T19:22:45.495765775Z"
+    created: "2026-11-26T11:09:10.392549877Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8505,7 +8594,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.3.0-alpha1
-    created: "2026-11-25T19:22:45.49329907Z"
+    created: "2026-11-26T11:09:10.388733703Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8657,7 +8746,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.2.0
-    created: "2026-11-25T19:22:45.490368992Z"
+    created: "2026-11-26T11:09:10.385047911Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8809,7 +8898,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 1.1.0
-    created: "2026-11-25T19:22:45.487104669Z"
+    created: "2026-11-26T11:09:10.381571501Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -8958,7 +9047,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 1.0.2
-    created: "2026-11-25T19:22:45.48420337Z"
+    created: "2026-11-26T11:09:10.378667696Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9107,7 +9196,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-11-25T19:22:45.480940775Z"
+    created: "2026-11-26T11:09:10.375061729Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9256,7 +9345,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-11-25T19:22:45.477284987Z"
+    created: "2026-11-26T11:09:10.371413088Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9405,7 +9494,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 1.0.0-rc8
-    created: "2026-11-25T19:22:45.474224912Z"
+    created: "2026-11-26T11:09:10.367556614Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9553,7 +9642,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.471142493Z"
+    created: "2026-11-26T11:09:10.364155807Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9701,7 +9790,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.468448671Z"
+    created: "2026-11-26T11:09:10.361020481Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9849,7 +9938,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.466131437Z"
+    created: "2026-11-26T11:09:10.358310456Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -9997,7 +10086,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.46338028Z"
+    created: "2026-11-26T11:09:10.355097957Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -10047,7 +10136,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/kuadrant-operator-1.0.0-rc1.tgz
     version: 1.0.0-rc1
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.455391631Z"
+    created: "2026-11-26T11:09:10.346637128Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -10097,7 +10186,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/kuadrant-operator-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.461134091Z"
+    created: "2026-11-26T11:09:10.352635953Z"
     dependencies:
     - name: authorino-operator
       repository: https://kuadrant.io/helm-charts/
@@ -10187,7 +10276,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.19.0
-    created: "2026-11-25T19:22:45.581863193Z"
+    created: "2026-11-26T11:09:10.490009778Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: dd647f0ae91d886c116923134e7e86bd0ab0824be10ff101f6d3d9848dec3daa
@@ -10254,7 +10343,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.5
-    created: "2026-11-25T19:22:45.581526854Z"
+    created: "2026-11-26T11:09:10.489639613Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: b0f8e6e07c3c0fc8a9a4adc807c1ccc11d3ccbde2aedbbc59bea6fe345a18758
@@ -10321,7 +10410,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.4
-    created: "2026-11-25T19:22:45.581195984Z"
+    created: "2026-11-26T11:09:10.489292032Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: a837e4dd8f1d28554fbcd4dbdd103ae2f30da9eda299f2e5b63d09b926c9cc2e
@@ -10388,7 +10477,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.3
-    created: "2026-11-25T19:22:45.580844823Z"
+    created: "2026-11-26T11:09:10.48891014Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: e238bc3771ef7962659fdf76ea4cad4722dc2e2ffbd9aa8fb29ba094ba499744
@@ -10455,7 +10544,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.2
-    created: "2026-11-25T19:22:45.58051214Z"
+    created: "2026-11-26T11:09:10.488271114Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 5ce45cafb66ef36b670d4e27fd42f06d38d5332685c385aa43aebdd1ae4c5e70
@@ -10522,7 +10611,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.0
-    created: "2026-11-25T19:22:45.580179337Z"
+    created: "2026-11-26T11:09:10.487187562Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 3e7b96e9513ea9f5c8ecf26cda9e2b0bd745f001791ee28455df55bdc06c4196
@@ -10589,7 +10678,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.18.0-dev01
-    created: "2026-11-25T19:22:45.579812884Z"
+    created: "2026-11-26T11:09:10.486779471Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: ea6bf057ce82a731e9eb8cbee19275efdcc25426ee4845c31c70ff9552b8d38a
@@ -10656,7 +10745,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.4
-    created: "2026-11-25T19:22:45.579463366Z"
+    created: "2026-11-26T11:09:10.486425043Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 02826c8eeab6f5e343e4c21d7cb42e015a0b5c8a73351710adc12d30a9d06e20
@@ -10723,7 +10812,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.3
-    created: "2026-11-25T19:22:45.579092206Z"
+    created: "2026-11-26T11:09:10.486080603Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 35abd3d2e4860971b878df481fa826ebe50cc581ec15fba0e6a877d6920e3417
@@ -10790,7 +10879,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.2
-    created: "2026-11-25T19:22:45.578492347Z"
+    created: "2026-11-26T11:09:10.485717569Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: d1126de1741f6fa055849065352d3c558f1c9455791b47b0377750f702bc97ce
@@ -10857,7 +10946,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.1
-    created: "2026-11-25T19:22:45.577834372Z"
+    created: "2026-11-26T11:09:10.485372349Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: be91ceb831b5ebd7d5c02348434360332836606c578298f513a83573b3271b03
@@ -10924,7 +11013,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.17.0
-    created: "2026-11-25T19:22:45.577465755Z"
+    created: "2026-11-26T11:09:10.485031586Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 0816561571e8fb654694c6c629870460206f14fd5377c2eed468688c08b04585
@@ -10991,7 +11080,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.16.0
-    created: "2026-11-25T19:22:45.577027636Z"
+    created: "2026-11-26T11:09:10.484656211Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 56862a2c53642fdaea906f71ce6a3365df50e73fdb6f88f9efb73f36809c830e
@@ -11058,7 +11147,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.15.0
-    created: "2026-11-25T19:22:45.576588786Z"
+    created: "2026-11-26T11:09:10.484294025Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: ac73d846c357291260fe017aa5a691424d9fcc42691013ea3fd92d9c42f26b0a
@@ -11125,7 +11214,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.14.0
-    created: "2026-11-25T19:22:45.576165458Z"
+    created: "2026-11-26T11:09:10.483884925Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 807423d065a3061fd41933e9d723260155b30467d82f67008f8084c0ccf97f9e
@@ -11192,7 +11281,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.13.1
-    created: "2026-11-25T19:22:45.575699738Z"
+    created: "2026-11-26T11:09:10.482633881Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: a388f460fdc138a6a50f335b70be46c78f9512e8718bb0780377fae70fdf27b3
@@ -11259,7 +11348,7 @@ entries:
         url: https://kuadrant.io/helm-charts/kuadrant-public-key.asc
     apiVersion: v2
     appVersion: 0.13.0-alpha1
-    created: "2026-11-25T19:22:45.575348708Z"
+    created: "2026-11-26T11:09:10.482221361Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 8f42c45759e9dfd6db0c311e87429f5db03208387503dc803cf86caffe298f79
@@ -11323,7 +11412,7 @@ entries:
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
     appVersion: 0.12.1
-    created: "2026-11-25T19:22:45.575005058Z"
+    created: "2026-11-26T11:09:10.481792368Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: c83ff3d53033b091620b6b66aa186294d9f0c3d13614f2925fb7bb029d244269
@@ -11386,7 +11475,7 @@ entries:
       artifacthub.io/operator: "true"
       artifacthub.io/operatorCapabilities: Basic Install
     apiVersion: v2
-    created: "2026-11-25T19:22:45.574671925Z"
+    created: "2026-11-26T11:09:10.481428746Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 0f6504aeaed79000c008262b30be3355d82f6ec114b35b1679379c4e5fae237f
@@ -11415,7 +11504,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/limitador-operator-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.574360864Z"
+    created: "2026-11-26T11:09:10.481060921Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: 120e68b7b0e48330f1732ed56fabdae15104224f96a756151bfd9b946361f84d
@@ -11444,7 +11533,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/limitador-operator-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.574085125Z"
+    created: "2026-11-26T11:09:10.480671951Z"
     description: Kubernetes operator for managing Limitador instances, a rate limiting
       service to protect your APIs.
     digest: fcb4cd10c217e89f9d92b7b1b2b78a642938ada57faeb773552f5213c3c39c7c
@@ -11473,7 +11562,7 @@ entries:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/limitador-operator-0.10.0-alpha3.tgz
     version: 0.10.0-alpha3
   - apiVersion: v2
-    created: "2026-11-25T19:22:45.573770419Z"
+    created: "2026-11-26T11:09:10.480374096Z"
     description: A Helm chart for Limitador Operator
     digest: 1d909dddc8675fababcc678311fdd6ea0d8a1e96dbf5efee57ac7aa97a3ebd72
     maintainers:
@@ -11488,4 +11577,4 @@ entries:
     urls:
     - https://github.com/Kuadrant/helm-charts/raw/refs/heads/main/charts/limitador-operator-0.10.0-alpha1.tgz
     version: 0.10.0-alpha1
-generated: "2026-11-25T19:22:45.414575175Z"
+generated: "2026-11-26T11:09:10.303316349Z"
